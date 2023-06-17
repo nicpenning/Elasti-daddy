@@ -3,9 +3,9 @@ This is a project for preparing and analyzing motherhood and fatherhood data for
 
 ### To do : Blog for creating a somewhat comprehensive guide to build a custom integration from the ground up
 - [ ] Getting started with the coding environment
- - Docker
- - Go
- - elastic-package
+  - Docker
+  - Go
+  - elastic-package
 - [ ] Starting up the Elastic stack
 - [ ] Creating a new custom integration (package)
 - [ ] Test integration with the dataset
