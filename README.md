@@ -11,9 +11,10 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 
 # Start
 (Sample data from my hand written journal)
-![1685682695341](https://github.com/nicpenning/Elasti-daddy/assets/5582679/53e5aaa5-de3e-4469-ab25-5b2247ae9f92)
 
-# 👇🏻👇🏻👇🏻👇🏻👇🏻
+<img src="https://github.com/nicpenning/Elasti-daddy/assets/5582679/53e5aaa5-de3e-4469-ab25-5b2247ae9f92" width=35% height=35%>
+
+# 👇🏻
 
 # End
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/a2878f25-26ff-4bf5-a720-64be9b6d69e2)
