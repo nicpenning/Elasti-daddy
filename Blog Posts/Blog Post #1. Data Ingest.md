@@ -17,12 +17,11 @@ be saved as a CSV and then ingesting into Elasticsearch for analysis in Kibana.
 
 Along this journey I figured it would be a great opportunity to understand
 how Elastic Integrations work so that I can build others down the road that are more practical that the world can enjoy. While I plan to have a fully
-funcfional integration at the end of this project, it `will not be published` since it is a very niche integration that only those that use the spreadsheet
-I share and fill out can benefit which will likely be no one besides those looking to walk through the entire process.
+functional integration at the end of this project, it `will not be published` since it is a very niche integration that only those that follow this project will see.
 
 Since I will cover standing up the Elastic stack in a later blog post, I will skip that here and go straight to the data ingest and a glimpse into the end goal.
 
-So without futher a do, let's get into it! (Note: I will be using Elastic Stack version 8.8.1)
+So without futher ado, let's get into it! (Note: I will be using Elastic Stack version 8.8.1)
 
 1. Start up the Elastic Stack using the elastic-package tool (covered in later blog post)
 
