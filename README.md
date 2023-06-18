@@ -10,9 +10,10 @@ This is a project for preparing and analyzing motherhood and fatherhood data for
 I am excited to turn my hand written notes into useful visualizations to see what I can learn along the way and share that experience for all.
 
 # Start
-(Sample data from my hand written journal)
 
 <img src="https://github.com/nicpenning/Elasti-daddy/assets/5582679/53e5aaa5-de3e-4469-ab25-5b2247ae9f92" width=35% height=35%>
+
+(Sample data from my hand written journal)
 
 # 👇🏻
 
