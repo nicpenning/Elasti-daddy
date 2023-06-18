@@ -1,4 +1,20 @@
 # 👨🏻‍🍼 Elasti-daddy
+
+
+*Behold, children are a heritage from the LORD,*
+*the fruit of the womb a reward.*
+
+*Like arrows in the hand of a warrior*
+*are the children of one’s youth.*
+
+*Blessed is the man*
+*who fills his quiver with them!*
+
+*He shall not be put to shame*
+*when he speaks with his enemies in the gate.*
+
+--Psalm 127:3–5
+
 🙏 May God's blessings be to those fathers and mothers out there in the world raising their families.  
 
 In honor of Father's day (and of course Mother's day), I will be developing this project to analyze trends with a small set of data over 4-12 weeks of data points for raising a newborn baby. 
