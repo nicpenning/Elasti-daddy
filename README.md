@@ -16,12 +16,12 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 
 # 👇🏻
 
-# End
+# Finish
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/a2878f25-26ff-4bf5-a720-64be9b6d69e2)
 (Dashboard in Kibana)
 ### What's to be expected?
 #### Multipart blog for creating a somewhat comprehensive guide to build a custom integration from the ground up. 
-- [ ] Overview (Beginning to End goal)
+- [ ] Overview
 - [ ] Data ingest example with Upload feature in Kibana
   - Data/Dashboard Preview
 - [ ] Getting started with the coding environment
