@@ -19,7 +19,7 @@ when he speaks with his enemies in the gate.
 
 In honor of Father's day (and of course Mother's day), I will be developing this project to analyze trends with a small set of data over 4-12 weeks of data points for raising a newborn baby. 
 
-⚠️ Disclaimer: I am not suggesting that any one use this project to raise a child but rather a way to learn about Elatic integrations.
+⚠️ Disclaimer: I am not suggesting that any one use this project to raise a child but rather a way to learn about Elastic integrations.
 
 This is a project for preparing and analyzing motherhood and fatherhood data for taking care of a baby. The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle feeding (milk or formula), milk extraction, etc..
 
