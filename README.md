@@ -1,5 +1,5 @@
 # 👨🏻‍🍼 Elasti-daddy
-May God's blessings be to those fathers and mothers out there in the world raising their families.  
+🙏 May God's blessings be to those fathers and mothers out there in the world raising their families.  
 
 In honor of Father's day (and of course Mother's day), I will be developing this project to analyze trends with a small set of data over 4-12 weeks of data points for raising a newborn baby. 
 
@@ -9,15 +9,15 @@ This is a project for preparing and analyzing motherhood and fatherhood data for
 
 I am excited to turn my hand written notes into useful visualizations to see what I can learn along the way and share that experience for all.
 
-Start:
+# Start
 (Sample data from my hand written journal)
 ![1685682695341](https://github.com/nicpenning/Elasti-daddy/assets/5582679/53e5aaa5-de3e-4469-ab25-5b2247ae9f92)
 
 # 👇🏻👇🏻👇🏻👇🏻👇🏻
 
-End:
-???
-
+# End
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/a2878f25-26ff-4bf5-a720-64be9b6d69e2)
+(Dashboard in Kibana)
 ### What's to be expected?
 #### Multipart blog for creating a somewhat comprehensive guide to build a custom integration from the ground up. 
 - [ ] Overview (Beginning to End goal)
