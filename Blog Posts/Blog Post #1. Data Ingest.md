@@ -13,7 +13,7 @@ My personal goal is to see if I can answer the questions above by taking the dat
 be saved as a CSV and then ingesting into Elasticsearch for analysis in Kibana. 
 
 #### Simplified Process
-`Handwriting -> Spreadsheet -> Feed Me.csv -> Elasticsearch (Ingest) -> Kibana (Visualize)`
+`Hand written notes -> Spreadsheet -> Feed Me.csv -> Elasticsearch (Ingest) -> Kibana (Visualize)`
 
 Along this journey I figured it would be a great opportunity to understand
 how Elastic Integrations work so that I can build others down the road that are more practical that the world can enjoy. While I plan to have a fully
