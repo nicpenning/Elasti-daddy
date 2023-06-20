@@ -107,120 +107,20 @@ So without futher ado, let's get into it! (Note: I will be using Elastic Stack v
 	
 	</details>
 9. Update Mapping (you can copy paste the following code into the Mappings section)
+	<details>
+	Now we must update the `Start Time` and `End Time` from type `keyword` to type `date`, so the Mappings JSON looks like this:
 
-Now we must update the `Start Time` and `End Time` from type `keyword` to type `date`, so the Mappings JSON looks like this:
-```json
-{
-  "properties": {
-    "@timestamp": {
-      "type": "date"
-    },
-    "Amount (ml/cc)": {
-      "type": "long"
-    },
-    "Count": {
-      "type": "long"
-    },
-    "Duration": {
-      "type": "long"
-    },
-    "End Time": {
-      "type": "date"
-    },
-    "Medicine 💊": {
-      "type": "keyword"
-    },
-    "Side": {
-      "type": "keyword"
-    },
-    "Start Time": {
-      "type": "date"
-    },
-    "Type": {
-      "type": "keyword"
-    }
-  }
-}
-```
+	https://github.com/nicpenning/Elasti-daddy/blob/02e51b7a194cc933c5e6cd4044ac7c6f270d67e8/Mapping/feed_me_mapping.json#L1-L31
+	</details>
+
 
 10. Update Ingest Pipeline (you can copy paste the following code into the Ingest pipeline section)
+	<details>
+	Now we will correct the formatting of the Timestamp of the date/time fields, split the `Medicine 💊` values into an array, and make the `Amount (ml/cc)` and `Duration` fields a type of long.
 
-Now we will correct the formatting of the Timestamp of the date/time fields, split the `Medicine 💊` values into an array, and make the `Amount (ml/cc)` and `Duration` fields a type of long.
+	https://github.com/nicpenning/Elasti-daddy/blob/02e51b7a194cc933c5e6cd4044ac7c6f270d67e8/Ingest%20Pipeline/feed_me_ingest.json#L1-L72
+	</details>
 
-```json
-{
-  "description": "Ingest pipeline created by text structure finder",
-  "processors": [
-  {
-    "csv": {
-      "field": "message",
-      "target_fields": [
-        "Medicine 💊",
-        "Start Time",
-        "End Time",
-        "Duration",
-        "Side",
-        "Type",
-        "Count",
-        "Amount (ml/cc)"
-      ],
-      "ignore_missing": false,
-      "trim": true
-    }
-  },
-  {
-    "date": {
-      "field": "Start Time",
-      "formats": [
-        "M/d/yyyy H:mm"
-      ],
-      "target_field": "@timestamp",
-	    "timezone": "America/Chicago"
-
-    }
-  },
-  {
-    "date": {
-      "field": "End Time",
-      "formats": [
-        "M/d/yyyy H:mm"
-      ],
-      "target_field": "End Time",
-	    "timezone": "America/Chicago"
-    }
-  },
-  {
-    "date": {
-      "field": "Start Time",
-      "formats": [
-        "M/d/yyyy H:mm"
-      ],
-      "target_field": "Start Time",
-	    "timezone": "America/Chicago"
-    }
-  },
-  {
-    "convert": {
-      "field": "Amount (ml/cc)",
-      "type": "long",
-      "ignore_missing": true
-    }
-  },
-  {
-      "split": {
-        "field": "Medicine 💊",
-        "separator": ",",
-        "ignore_missing": true
-      }
-  },
-  {
-    "remove": {
-      "field": "message"
-    }
-  }
-]
-}
-```
 11. Click Import!
 	<details>
 
