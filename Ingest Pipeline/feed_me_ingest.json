@@ -1,0 +1,72 @@
+{
+  "description": "Ingest pipeline created by text structure finder",
+  "processors": [
+  {
+    "csv": {
+      "field": "message",
+      "target_fields": [
+        "Medicine 💊",
+        "Start Time",
+        "End Time",
+        "Duration",
+        "Side",
+        "Type",
+        "Count",
+        "Amount (ml/cc)"
+      ],
+      "ignore_missing": false,
+      "trim": true
+    }
+  },
+  {
+    "date": {
+      "field": "Start Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "@timestamp",
+	    "timezone": "America/Chicago"
+
+    }
+  },
+  {
+    "date": {
+      "field": "End Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "End Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "date": {
+      "field": "Start Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "Start Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "convert": {
+      "field": "Amount (ml/cc)",
+      "type": "long",
+      "ignore_missing": true
+    }
+  },
+  {
+      "split": {
+        "field": "Medicine 💊",
+        "separator": ",",
+        "ignore_missing": true
+      }
+  },
+  {
+    "remove": {
+      "field": "message"
+    }
+  }
+]
+}
