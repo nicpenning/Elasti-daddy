@@ -106,7 +106,7 @@ So without futher ado, let's get into it! (Note: I will be using Elastic Stack v
 	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/9925b186-cb5d-4feb-9350-0b4991e284b1)
 	
 	</details>
-9. Update Mapping (you can copy paste the following code into the Mappings section)
+9. Update Mappings (you can copy paste the following code into the Mappings section)
 	<details>
 	Now we must update the `Start Time` and `End Time` from type `keyword` to type `date`, so the Mappings JSON looks like this:
 
