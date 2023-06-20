@@ -29,84 +29,83 @@ So without futher ado, let's get into it! (Note: I will be using Elastic Stack v
 `elastic-package stack up -d -v --version=8.8.1`
 
 2. Navigate to Kibana's home page and click on Upload a File
-<details>
+	<details>
  
-  1. Click on Elastic at the top of Kibana to get to the Welcome Page
+	1. Click on Elastic at the top of Kibana to get to the Welcome Page
+	 
+	2. Click on Upload File
+	 
+	3. This is a note that the URL you could navigate to is: `https://127.0.0.1:5601/app/home#/tutorial_directory/fileDataViz`
  
-  2. Click on Upload File
- 
-  3. This is a note that the URL you could navigate to is: `https://127.0.0.1:5601/app/home#/tutorial_directory/fileDataViz`
- 
-</details>
-
-![Screenshot 2023-06-18 134546](https://github.com/nicpenning/Elasti-daddy/assets/5582679/6de30cfc-47a5-4a1c-9c7e-83c18dbfb9dd)
+	![Screenshot 2023-06-18 134546](https://github.com/nicpenning/Elasti-daddy/assets/5582679/6de30cfc-47a5-4a1c-9c7e-83c18dbfb9dd)
+	</details>
 
 3. Drag and Drop or Browse to the `Feed Me.csv` file to upload.
-<details>
+	<details>
 
-[Feed Me.csv found here](https://github.com/nicpenning/Elasti-daddy/blob/main/Data/Feed%20Me.csv)
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4160bfd3-24c1-4f50-a98e-c2abec534887)
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/8aa7bcbe-786b-4282-8557-54a71825e5e7)
-
-</details>
-4. Click Override Settings to Tweak Settings for Import
-<details>
+	[Feed Me.csv found here](https://github.com/nicpenning/Elasti-daddy/blob/main/Data/Feed%20Me.csv)
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4160bfd3-24c1-4f50-a98e-c2abec534887)
 	
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/11b79ea8-5e30-47d4-8983-27d0642749fc)
-
-Now that we are at he point we can tweak our ingest of the file I want to point out a few settings that we will need to set to make sure we get the data into Elasticsearch that will be usable for our visualations and search. [Documentation on Upload feature in Kibana](https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html#upload-data-kibana)
-
-⚠️ Note: The upload tool is great for a quick analysis of small files. This is not useful for any type of repeatable process which is why I wanted to demonstrate what we can do with a Proof of Concept before we dive into creating the integation. I believe this Upload tool is the fastest way to get this type of data intoElasticsearch with as little tooling possible.
-
-*Settings*
-You should be able to see a flyout window that has the following as the default settings we will soon change:
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c6058ddb-87e4-4dad-a74c-2122b3ad2b72)
-
-We will select the following settings:
-- Should Trim Fields (This is selected because in my dataset I may have some spaces after the text. This will clean up the data for us quite nicely.)
-- Contains Time Field. (This will allow us to visualize our data over time since we need to have a Date data type.)
-
-When we select Contains Time Field, two new fields appear that we will set to the following settings:
-`Timestamp format` : `custom` (which will make the `Custom timestamp format` field appear.
-We will set the format to `M/d/yyyy H:mm` since this will match our date format of `5/24/2023 17:46`
-Lastly, we we make the `Start Time` our Timestamp field so we can see when each event started.
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e2c7e6a0-2573-43fd-bd36-36f78b21516d)
-</details>
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/8aa7bcbe-786b-4282-8557-54a71825e5e7)
+	
+	</details>
+4. Click Override Settings to Tweak Settings for Import
+	<details>
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/11b79ea8-5e30-47d4-8983-27d0642749fc)
+	
+	Now that we are at he point we can tweak our ingest of the file I want to point out a few settings that we will need to set to make sure we get the data into Elasticsearch that will be usable for our visualations and search. [Documentation on Upload feature in Kibana](https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html#upload-data-kibana)
+	
+	⚠️ Note: The upload tool is great for a quick analysis of small files. This is not useful for any type of repeatable process which is why I wanted to demonstrate what we can do with a Proof of Concept before we dive into creating the integation. I believe this Upload tool is the fastest way to get this type of data intoElasticsearch with as little tooling possible.
+	
+	*Settings*
+	You should be able to see a flyout window that has the following as the default settings we will soon change:
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c6058ddb-87e4-4dad-a74c-2122b3ad2b72)
+	
+	We will select the following settings:
+	- Should Trim Fields (This is selected because in my dataset I may have some spaces after the text. This will clean up the data for us quite nicely.)
+	- Contains Time Field. (This will allow us to visualize our data over time since we need to have a Date data type.)
+	
+	When we select Contains Time Field, two new fields appear that we will set to the following settings:
+	`Timestamp format` : `custom` (which will make the `Custom timestamp format` field appear.
+	We will set the format to `M/d/yyyy H:mm` since this will match our date format of `5/24/2023 17:46`
+	Lastly, we we make the `Start Time` our Timestamp field so we can see when each event started.
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e2c7e6a0-2573-43fd-bd36-36f78b21516d)
+	</details>
 
 5. Click Apply
-<details>
+	<details>
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d5a6a643-0f42-4728-bd0a-fc692c390fc4)
-</details>
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d5a6a643-0f42-4728-bd0a-fc692c390fc4)
+	</details>
 
 6. Click Import (at the bottom of the page)
-<details>
+	<details>
 	
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/58cb4560-17f1-4e2e-b28a-1131dcea28a4)
-
- - ⚠️ Note: The data will not be imported yet but rather you will be taking to the next step of the import process. This is a little confusing so I put in an [issue](https://github.com/elastic/kibana/issues/159826) for Kibana here to see if Elastic will make that button say *Next* instead.
-</details>
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/58cb4560-17f1-4e2e-b28a-1131dcea28a4)
+	
+	 - ⚠️ Note: The data will not be imported yet but rather you will be taking to the next step of the import process. This is a little confusing so I put in an [issue](https://github.com/elastic/kibana/issues/159826) for Kibana here to see if Elastic will make that button say *Next* instead.
+	</details>
 
 7. Click Advanced
-<details>
+	<details>
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/3dcc9817-57f2-45ef-993f-3cd72b09a980)
-
-We are using the Advanced option for a couple of reasons:
- - Ensure we get Date mappings for `Start Time` and `End Time`
- - Ensure we apply the correct time zone for the data, tweak the `Medicine 💊` field to be an array, and make sure that the `Amount (ml/cc)` and `Duration` fields are a long.
-</details>
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/3dcc9817-57f2-45ef-993f-3cd72b09a980)
+	
+	We are using the Advanced option for a couple of reasons:
+	 - Ensure we get Date mappings for `Start Time` and `End Time`
+	 - Ensure we apply the correct time zone for the data, tweak the `Medicine 💊` field to be an array, and make sure that the `Amount (ml/cc)` and `Duration` fields are a long.
+	</details>
 
 8. Set Index name and do not create a Data view
-<details>
-Set the Index name to `feed_me`. This will be the name of our log source we will use later. Also, the data-view will be imported along with the dashboard saved object later.
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/9925b186-cb5d-4feb-9350-0b4991e284b1)
-
-</details>
+	<details>
+	Set the Index name to `feed_me`. This will be the name of our log source we will use later. Also, the data-view will be imported along with the dashboard saved object later.
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/9925b186-cb5d-4feb-9350-0b4991e284b1)
+	
+	</details>
 9. Update Mapping (you can copy paste the following code into the Mappings section)
 
 Now we must update the `Start Time` and `End Time` from type `keyword` to type `date`, so the Mappings JSON looks like this:
@@ -223,48 +222,47 @@ Now we will correct the formatting of the Timestamp of the date/time fields, spl
 }
 ```
 11. Click Import!
-<details>
+	<details>
 
-https://github.com/nicpenning/Elasti-daddy/assets/5582679/b56ab7a4-8d7a-4d23-8562-914cb7b1d81f
-
-Now the data is in Elasticsearch and ready to be visualized. If the data was successfully imported, now is the time to import a dashboard that I put together to finalize this initial blog post!
-</details>
+	https://github.com/nicpenning/Elasti-daddy/assets/5582679/b56ab7a4-8d7a-4d23-8562-914cb7b1d81f
+	
+	Now the data is in Elasticsearch and ready to be visualized. If the data was successfully imported, now is the time to import a dashboard that I put together to finalize this initial blog post!
+	</details>
 
 12. Import Kibana Dashboard
-
-<details>
-Navigate to the `Stack Management` section of Kibana:
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e287adff-a8bb-4640-beca-0c67a0262ce0)
-
-Then go to `Saved Objects`:
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d8e2d788-af45-4556-a595-67001b6b60bf)
-
-Then click `Import`.
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f67c66b8-e16c-4025-8587-fe5c7a0c7c50)
-
-Then upload the `Feed Analysis.ndjson` dashboard that has been provided [here](https://github.com/nicpenning/Elasti-daddy/blob/main/Kibana/Feed%20Analysis.ndjson).
-
-Lastly, click Import.
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4f746709-18ba-44ad-8b33-f4b5154e1608)
-
-If successful it is time to look at our data!
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4d3604c6-28d5-4966-9453-08743acc79a8)
-</details>
+	<details>
+	Navigate to the `Stack Management` section of Kibana:
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e287adff-a8bb-4640-beca-0c67a0262ce0)
+	
+	Then go to `Saved Objects`:
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d8e2d788-af45-4556-a595-67001b6b60bf)
+	
+	Then click `Import`.
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f67c66b8-e16c-4025-8587-fe5c7a0c7c50)
+	
+	Then upload the `Feed Analysis.ndjson` dashboard that has been provided [here](https://github.com/nicpenning/Elasti-daddy/blob/main/Kibana/Feed%20Analysis.ndjson).
+	
+	Lastly, click Import.
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4f746709-18ba-44ad-8b33-f4b5154e1608)
+	
+	If successful it is time to look at our data!
+	
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4d3604c6-28d5-4966-9453-08743acc79a8)
+	</details>
 
 13. Click on `Feed Analysis` dashboard
-<details>
+	<details>
 	
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/667cbc74-6285-41ec-9294-ef3b4a2be65e)
-
-You may have to update the time slider:
-
-https://github.com/nicpenning/Elasti-daddy/assets/5582679/e4623daa-2ccf-436e-bb18-10cb837d9040
-</details>
+	![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/667cbc74-6285-41ec-9294-ef3b4a2be65e)
+	
+	You may have to update the time slider:
+	
+	https://github.com/nicpenning/Elasti-daddy/assets/5582679/e4623daa-2ccf-436e-bb18-10cb837d9040
+	</details>
 # 🪄Ta-da!
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/c359b5c6-d5f1-4c14-9ff6-ad63ed194765
