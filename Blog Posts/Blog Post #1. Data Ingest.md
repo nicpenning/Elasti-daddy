@@ -90,11 +90,177 @@ Done
 
 ![Screenshot 2023-06-18 134546](https://github.com/nicpenning/Elasti-daddy/assets/5582679/6de30cfc-47a5-4a1c-9c7e-83c18dbfb9dd)
 
-3. Drag and Drop or Browse to the `Feed Me.csv` file to upload
+3. Drag and Drop or Browse to the `Feed Me.csv` file to upload.
+
+[Feed Me.csv found here](https://github.com/nicpenning/Elasti-daddy/blob/main/Data/Feed%20Me.csv)
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4160bfd3-24c1-4f50-a98e-c2abec534887)
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/8aa7bcbe-786b-4282-8557-54a71825e5e7)
 
-4. Now that we are at he point we can tweak our ingest of the file I want to point out a few settings that we will need to set to make sure we get the data into Elasticsearch that will be usable for our visualations and search.
+4. Click Override Settings to Tweak Settings for Import
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/11b79ea8-5e30-47d4-8983-27d0642749fc)
+
+Now that we are at he point we can tweak our ingest of the file I want to point out a few settings that we will need to set to make sure we get the data into Elasticsearch that will be usable for our visualations and search. [Documentation on Upload feature in Kibana](https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html#upload-data-kibana)
+
+⚠️ Note: The upload tool is great for a quick analysis of small files. This is not useful for any type of repeatable process which is why I wanted to demonstrate what we can do with a Proof of Concept before we dive into creating the integation. I believe this Upload tool is the fastest way to get this type of data intoElasticsearch with as little tooling possible.
+
+*Settings*
+You should be able to see a flyout window that has the following as the default settings we will soon change:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c6058ddb-87e4-4dad-a74c-2122b3ad2b72)
+
+We will select the following settings:
+- Should Trim Fields (This is selected because in my dataset I may have some spaces after the text. This will clean up the data for us quite nicely.)
+- Contains Time Field. (This will allow us to visualize our data over time since we need to have a Date data type.)
+
+When we select Contains Time Field, two new fields appear that we will set to the following settings:
+`Timestamp format` : `custom` (which will make the `Custom timestamp format` field appear.
+We will set the format to `M/d/yyyy H:mm` since this will match our date format of `5/24/2023 17:46`
+Lastly, we we make the `Start Time` our Timestamp field so we can see when each event started.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e2c7e6a0-2573-43fd-bd36-36f78b21516d)
+
+5. Click Apply
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d5a6a643-0f42-4728-bd0a-fc692c390fc4)
+
+6. Click Import (at the bottom of the page)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/58cb4560-17f1-4e2e-b28a-1131dcea28a4)
+
+ - ⚠️ Note: The data will not be imported yet but rather you will be taking to the next step of the import process. This is a little confusing so I put in an [issue](https://github.com/elastic/kibana/issues/159826) for Kibana here to see if Elastic will make that button say *Next* instead.
+
+7. Click Advanced
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/3dcc9817-57f2-45ef-993f-3cd72b09a980)
+
+We are using the Advanced option for a couple of reasons:
+ - Ensure we get Date mappings for `Start Time` and `End Time`
+ - Ensure we apply the correct time zone for the data, tweak the `Medicine 💊` field to be an array, and make sure that the `Amount (ml/cc)` and `Duration` fields are a long.
+
+
+8. Set Index name and Data view name to `feed_me`
+
+This will be the name of our log source we will use later.
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/448efe44-ebfa-464e-b5cc-0ee95194ad04)
+
+9. Update Mapping (you can copy paste the following code into the Mappings section)
+
+Now we must update the `Start Time` and `End Time` from type `keyword` to type `date`, so the Mappings JSON looks like this:
+```json
+{
+  "properties": {
+    "@timestamp": {
+      "type": "date"
+    },
+    "Amount (ml/cc)": {
+      "type": "long"
+    },
+    "Count": {
+      "type": "long"
+    },
+    "Duration": {
+      "type": "long"
+    },
+    "End Time": {
+      "type": "date"
+    },
+    "Medicine 💊": {
+      "type": "keyword"
+    },
+    "Side": {
+      "type": "keyword"
+    },
+    "Start Time": {
+      "type": "date"
+    },
+    "Type": {
+      "type": "keyword"
+    }
+  }
+}
+```
+
+10. Update Ingest Pipeline (you can copy paste the following code into the Ingest pipeline section)
+
+Now we will correct the formatting of the Timestamp of the date/time fields, split the `Medicine 💊` values into an array, and make the `Amount (ml/cc)` and `Duration` fields a type of long.
+
+```json
+{
+  "description": "Ingest pipeline created by text structure finder",
+  "processors": [
+  {
+    "csv": {
+      "field": "message",
+      "target_fields": [
+        "Medicine 💊",
+        "Start Time",
+        "End Time",
+        "Duration",
+        "Side",
+        "Type",
+        "Count",
+        "Amount (ml/cc)"
+      ],
+      "ignore_missing": false,
+      "trim": true
+    }
+  },
+  {
+    "date": {
+      "field": "Start Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "@timestamp",
+	    "timezone": "America/Chicago"
+
+    }
+  },
+  {
+    "date": {
+      "field": "End Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "End Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "date": {
+      "field": "Start Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "Start Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "convert": {
+      "field": "Amount (ml/cc)",
+      "type": "long",
+      "ignore_missing": true
+    }
+  },
+  {
+      "split": {
+        "field": "Medicine 💊",
+        "separator": ",",
+        "ignore_missing": true
+      }
+  },
+  {
+    "remove": {
+      "field": "message"
+    }
+  }
+]
+}
+```
+11. Click Import!
+
 
 To be continued...
