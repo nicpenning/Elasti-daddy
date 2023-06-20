@@ -1,6 +1,6 @@
 # Blog Post #1. 
 ## Data ingest example with Upload feature in Kibana 
-To begin this series of blog posts, I would like to start on how I got here. If that is interesting, read on, otherwise [click here to skip to the data ingest steps!](https://github.com/nicpenning/Elasti-daddy/edit/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md#data-ingest-via-kibana-upload)
+To begin this series of blog posts, I would like to start on how I got here. If that is interesting, read on, otherwise [click here to skip to the data ingest steps!](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md#data-ingest-via-kibana-upload)
 
 My wife and I have recently been blessed with a new baby and one thing that was highly recommended was tracking the amount of food our baby was eating.
 This had us jotting down the feeding times for our little one which consisted of a `start time`, `end time`, calculated `duration` in minutes, and lastly the 
