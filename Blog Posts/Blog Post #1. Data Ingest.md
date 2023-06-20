@@ -290,5 +290,8 @@ If successful it is time to look at our data!
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4d3604c6-28d5-4966-9453-08743acc79a8)
 
+13. Click on `Feed Analysis` dashboard
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/667cbc74-6285-41ec-9294-ef3b4a2be65e)
 
 To be continued...
