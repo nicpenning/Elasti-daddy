@@ -262,5 +262,33 @@ Now we will correct the formatting of the Timestamp of the date/time fields, spl
 ```
 11. Click Import!
 
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/b56ab7a4-8d7a-4d23-8562-914cb7b1d81f
+
+Now the data is in Elasticsearch and ready to be visualized. If the data was successfully imported, now is the time to import a dashboard that I put together to finalize this initial blog post!
+
+12. Import Kibana Dashboard
+
+Navigate to the `Stack Management` section of Kibana:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e287adff-a8bb-4640-beca-0c67a0262ce0)
+
+Then go to `Saved Objects`:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d8e2d788-af45-4556-a595-67001b6b60bf)
+
+Then click `Import`.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f67c66b8-e16c-4025-8587-fe5c7a0c7c50)
+
+Then upload the `Feed Analysis.ndjson` dashboard that has been provided [here](https://github.com/nicpenning/Elasti-daddy/blob/main/Kibana/Feed%20Analysis.ndjson).
+
+and click Import!
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4f746709-18ba-44ad-8b33-f4b5154e1608)
+
+If successful it is time to look at our data!
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4d3604c6-28d5-4966-9453-08743acc79a8)
+
 
 To be continued...
