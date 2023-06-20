@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "@timestamp": {
+      "type": "date"
+    },
+    "Amount (ml/cc)": {
+      "type": "long"
+    },
+    "Count": {
+      "type": "long"
+    },
+    "Duration": {
+      "type": "long"
+    },
+    "End Time": {
+      "type": "date"
+    },
+    "Medicine 💊": {
+      "type": "keyword"
+    },
+    "Side": {
+      "type": "keyword"
+    },
+    "Start Time": {
+      "type": "date"
+    },
+    "Type": {
+      "type": "keyword"
+    }
+  }
+}
