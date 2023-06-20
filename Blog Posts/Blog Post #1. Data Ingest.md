@@ -1,6 +1,6 @@
 # Blog Post #1. 
-## Data ingest example with Upload feature in Kibana
-To begin this series of blog posts, I would like to start on how I got here. The short version is this:
+## Data ingest example with Upload feature in Kibana 
+To begin this series of blog posts, I would like to start on how I got here. If that is interesting, read on, otherwise [click here to skip to the data ingest steps!](https://github.com/nicpenning/Elasti-daddy/edit/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md#data-ingest-via-kibana-upload)
 
 My wife and I have recently been blessed with a new baby and one thing that was highly recommended was tracking the amount of food our baby was eating.
 This had us jotting down the feeding times for our little one which consisted of a `start time`, `end time`, calculated `duration` in minutes, and lastly the 
@@ -23,6 +23,7 @@ Since I will cover standing up the Elastic stack in a later blog post, I will sk
 
 So without futher ado, let's get into it! (Note: I will be using Elastic Stack version 8.8.1)
 
+#### Data Ingest via Kibana Upload
 1. Start up the Elastic Stack using the elastic-package tool (covered in later blog post)
 
 `elastic-package stack up -d -v --version=8.8.1`
