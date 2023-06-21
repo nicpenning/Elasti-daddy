@@ -167,4 +167,6 @@ So without futher ado, let's get into it! (Note: I will be using Elastic Stack v
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/c359b5c6-d5f1-4c14-9ff6-ad63ed194765
 
+To summarize, we took a CSV file and imported it into Elasticsearch using the Kibana Upload feature and then imported a Dashboard to look at the data. The next step is to build an integration that will make it easier to ingest this data with the Elastic agent as well as automatically import the pipelines and dashboard.
+
 This concludes using the Kibana Upload tool to ingest the prepared CSV file for analysis.
