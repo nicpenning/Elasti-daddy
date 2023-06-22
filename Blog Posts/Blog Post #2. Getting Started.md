@@ -31,7 +31,7 @@ sudo unlink /etc/resolv.conf
 echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
 ```
 
-2. Install Docker
+2. Install Docker (Inside of WSL 2 - Ubuntu)
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -39,15 +39,18 @@ sudo sh get-docker.sh
 ```
 
 #### Running Docker with your user instead of sudo
+
+```
 sudo usermod -aG docker $USER
 sudo groupadd docker
 newgrp docker
+```
 
 #### Test Docker usage
 
 `docker run hello-world`
 
-3. Install Go
+3. Install Go (Inside of WSL 2 - Ubuntu)
 
 ```
 wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz #(Find latest download link here - Linux: https://go.dev/dl/)
@@ -55,7 +58,7 @@ tar -xf go1.20.5.linux-amd64.tar.gz
 sudo nano /etc/profile --> Add export PATH="~/go/:$PATH" to the bottom of the file
 ```
 
-4. Install Elastic Package
+4. Install Elastic Package (Inside of WSL 2 - Ubuntu)
 
 ```
 wget https://github.com/elastic/elastic-package/releases/download/v0.81.0/elastic-package_0.81.0_linux_amd64.tar.gz #(Find latest download link here elastic-package_*.*.*_linux_amd64.tar.gz - https://github.com/elastic/elastic-package/releases)
