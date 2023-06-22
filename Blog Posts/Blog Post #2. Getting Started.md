@@ -9,8 +9,8 @@ testing, and publishing of an integration.
 
 Here are the pre-requisities:
 - Windows Subsystem for Linux 2 (Optional)
-- Go
 - Docker
+- Go
 - elastic-package
 
 Note: Each of these tools should be executable from any path to be successful.
@@ -34,7 +34,6 @@ echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
 </details>
 
 #### 2. Install Docker (Inside of WSL 2 - Ubuntu)
-
 <details>
 
 ```
