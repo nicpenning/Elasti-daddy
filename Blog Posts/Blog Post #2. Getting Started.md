@@ -23,7 +23,7 @@ this project, but this should work on any environment as long as these 3 tools h
 
 `wsl --install -d Ubuntu`
 
-#### Fix DNS resolution issues
+⚠️ Fix DNS resolution issues
 
 ```
 echo -e "[network]\ngenerateResolvConf = false" | sudo tee -a /etc/wsl.conf
@@ -34,7 +34,7 @@ echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
 2. Install Docker
 
 ```
-curl -fsSL https://get.cocker.com -o get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
