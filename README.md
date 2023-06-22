@@ -40,7 +40,8 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 #### Multipart blog for creating a somewhat comprehensive guide to build a custom integration from the ground up. 
 - [x] [Data ingest example with Upload feature in Kibana](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md)
   - [Data/Dashboard Preview](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md#ta-da)
-- [ ] Getting started with the coding environment
+- [ ] [Getting started with the coding environment](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md)
+  - Windows Subsystem for Linux 2 - Ubuntu (Optional)
   - Docker
   - Go
   - elastic-package
