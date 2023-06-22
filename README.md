@@ -38,8 +38,8 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 *Dashboard in Kibana*
 ### Overview - What's to be expected?
 #### Multipart blog for creating a somewhat comprehensive guide to build a custom integration from the ground up. 
-- [ ] [Data ingest example with Upload feature in Kibana](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md)
-  - Data/Dashboard Preview
+- [x] [Data ingest example with Upload feature in Kibana](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md)
+  - [Data/Dashboard Preview](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%231.%20Data%20Ingest.md#ta-da)
 - [ ] Getting started with the coding environment
   - Docker
   - Go
