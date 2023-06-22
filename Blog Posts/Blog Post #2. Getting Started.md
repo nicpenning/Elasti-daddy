@@ -1,4 +1,4 @@
-# Blog Post #2. 
+# Blog Post #2. 🚧 Under construction 🏗 
 ## Getting started with the coding environment
 
 To begin the development of an Elastic Integration that will prepare everything we need to 
