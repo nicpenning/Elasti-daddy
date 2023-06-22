@@ -7,10 +7,9 @@ tool. This tool will allow us to spin up the Elastic stack for testing and aid i
 testing, and publishing of an integration.
 
 Here are the pre-requisities:
-
-1. Go
-2. Docker
-3. elastic-package
+- Go
+- Docker
+- elastic-package
 
 Note: Each of these tools should be executable from any path to be successful.
 
