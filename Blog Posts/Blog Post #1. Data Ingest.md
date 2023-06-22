@@ -23,7 +23,6 @@ Since I will cover standing up the Elastic stack in a later blog post, I will sk
 
 So without futher ado, let's get into it! (Note: I will be using Elastic Stack version 8.8.1)
 
-#### Data Ingest via Kibana Upload
 #### 1. Start up the Elastic Stack using the elastic-package tool (covered in later blog post)
 
 `elastic-package stack up -d -v --version=8.8.1`
