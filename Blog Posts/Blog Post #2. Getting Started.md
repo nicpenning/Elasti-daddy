@@ -1,5 +1,4 @@
 # Blog Post #2. 
-# 🚧 Under construction 🏗 
 ## Getting started with the coding environment
 
 To begin the development of an Elastic Integration that will prepare everything we need to 
@@ -63,7 +62,7 @@ echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
 For more details on setting up WSL 2 you can see Microsoft's documentation [here.](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
 </details>
 
-#### 2. Install Docker (Inside of WSL 2 - Ubuntu)
+#### 2. Install Docker within Ubuntu
 <details>
 
 Now it is time to install docker when you are inside of Ubuntu.
@@ -167,7 +166,7 @@ Usage:
 
 </details>
 
-#### 3. Install Go (Inside of WSL 2 - Ubuntu)
+#### 3. Install Go within Ubuntu
 
 <details>
 
@@ -201,7 +200,7 @@ If you still can't get `go` to execute, you can refer to Go's offical documenati
 
 </details>
 
-#### 4. Install elastic-package (Inside of WSL 2 - Ubuntu)
+#### 4. Install elastic-package within Ubuntu
 
 <details>
   
