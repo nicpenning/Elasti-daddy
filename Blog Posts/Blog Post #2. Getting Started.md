@@ -117,14 +117,14 @@ sudo service docker start
 If all is successful, then you should be able to test our docker installation by running:
 
 ```
-docker run hello-world
+sudo docker run hello-world
 sudo service docker start
 ```
 
 Then you should see this output if it worked:
 
 ```
-napsta@el33t-b00k-1:~$ docker run hello-world
+napsta@el33t-b00k-1:~$ sudo docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 719385e32844: Pull complete
@@ -135,8 +135,9 @@ Hello from Docker!
 ...snipped for brevity...
 ```
 
+Lastly, it is a good idea to run docker with your user so you don't have to use sudo everytime.
 
-Running Docker with your user instead of sudo
+To do this, run the following:
 
 ```
 sudo usermod -aG docker $USER
@@ -144,7 +145,25 @@ sudo groupadd docker
 newgrp docker
 ```
 
+The last check is to make sure docker-compose can execute, so run this command:
 
+```
+docker-compose
+```
+
+Then make sure you have this output:
+
+```
+napsta@el33t-b00k-1:~$ docker-compose
+Define and run multi-container applications with Docker.
+
+Usage:
+  docker-compose [-f <arg>...] [--profile <name>...] [options] [--] [COMMAND] [ARGS...]
+  docker-compose -h|--help
+...snipped for brevity...
+```
+
+If you have made it through all of these steps and have the correct outputs, you have docker and docker-compose installed and are ready to install Go!
 
 </details>
 
