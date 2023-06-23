@@ -171,11 +171,26 @@ If you have made it through all of these steps and have the correct outputs, you
 
 <details>
 
+Now it is time to install `go`. When we first try to run `go` we will see the following output which tells us that it is not installed:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/155ebc27-6103-425d-9778-05a0b6be3e4b)
+
+So let us get it installed:
+
 ```
 wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz #(Find latest download link here - Linux: https://go.dev/dl/)
 tar -xf go1.20.5.linux-amd64.tar.gz
 sudo nano /etc/profile --> Add export PATH="~/go/:$PATH" to the bottom of the file
 ```
+
+This is what it looks like when editing the /etc/profile to add the PATH for `go`
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b69bdc65-350b-454e-be70-107c7fdc497f)
+
+Then to make sure this new PATH works, you will need to restart your Ubuntu instance by stopping and restarting the `LxssManager` service
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/69514de1-b49c-4cc0-8b66-c0b66e37eb4f)
+
 
 </details>
 
