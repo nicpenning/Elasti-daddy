@@ -180,17 +180,24 @@ So let us get it installed:
 ```
 wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz #(Find latest download link here - Linux: https://go.dev/dl/)
 tar -xf go1.20.5.linux-amd64.tar.gz
-sudo nano /etc/profile --> Add export PATH="~/go/:$PATH" to the bottom of the file
+sudo nano /etc/profile --> Add export PATH="~/go/bin:$PATH" to the bottom of the file
 ```
 
 This is what it looks like when editing the /etc/profile to add the PATH for `go`
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b69bdc65-350b-454e-be70-107c7fdc497f)
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7db9d51d-000c-4a56-b9f9-5d9636cbb9b7)
 
 Then to make sure this new PATH works, you will need to restart your Ubuntu instance by stopping and restarting the `LxssManager` service
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/69514de1-b49c-4cc0-8b66-c0b66e37eb4f)
 
+Now simply run `go` in your terminal and you should see this if successful:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/ae380497-4705-437e-a5c4-701f2db3030c)
+
+If you still can't get `go` to execute, you can refer to Go's offical documenation [here](https://go.dev/doc/install)
+
+🎉 Congrats, now it is time to move to installing the elastic-package!
 
 </details>
 
