@@ -13,7 +13,7 @@ Here are the pre-requisities:
 - Go
 - elastic-package
 
-Note: Each of these tools should be executable from any path to be successful.
+⚠️ Note: Each of these tools should be executable from any path to be successful.
 
 This blog post will cover getting all of those tools installed and how to test them to make sure
 the environment is ready to go. I will be using Windows Subsystem Linux 2 on Windows 11 throughout
@@ -52,7 +52,7 @@ Now make sure you have internet access by running:
 
 If you see `curl: (6) Could not resolve host: google.com` then you need to fix DNS by follow the commands below.
 
-⚠️ Fix DNS resolution issues (Optional - You may need to run this if you cannot access the internet from within Ubuntu on Windows)
+⚠️ Note: Fix DNS resolution issues (Optional - You may need to run this if you cannot access the internet from within Ubuntu on Windows)
 
 ```
 echo -e "[network]\ngenerateResolvConf = false" | sudo tee -a /etc/wsl.conf
@@ -163,7 +163,7 @@ Usage:
 ...snipped for brevity...
 ```
 
-If you have made it through all of these steps and have the correct outputs, you have docker and docker-compose installed and are ready to install Go!
+🎉 Congrats! If you have made it through all of these steps and have the correct outputs, you have docker and docker-compose installed and are ready to install Go!
 
 </details>
 
@@ -180,14 +180,14 @@ So let us get it installed:
 ```
 wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz #(Find latest download link here - Linux: https://go.dev/dl/)
 tar -xf go1.20.5.linux-amd64.tar.gz
-sudo nano /etc/profile --> Add export PATH="~/go/bin:$PATH" to the bottom of the file
+sudo nano /etc/profile #--> Add export PATH="~/go/bin:$PATH" to the bottom of the file
 ```
 
 This is what it looks like when editing the /etc/profile to add the PATH for `go`
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7db9d51d-000c-4a56-b9f9-5d9636cbb9b7)
 
-Then to make sure this new PATH works, you will need to restart your Ubuntu instance by stopping and restarting the `LxssManager` service
+Then to make sure this new PATH works, you will need to restart your Ubuntu instance by stopping and restarting the `LxssManager` service:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/69514de1-b49c-4cc0-8b66-c0b66e37eb4f)
 
@@ -204,20 +204,64 @@ If you still can't get `go` to execute, you can refer to Go's offical documenati
 #### 4. Install elastic-package (Inside of WSL 2 - Ubuntu)
 
 <details>
+  
+Now we are finally to installing `elastic-package`, which is very simple!
+
+You can follow Elastic's guide [here](https://github.com/elastic/elastic-package#getting-started), but I will walk you through how I did it.
+
+If you are not already there, log into your Ubuntu OS on Windows.
+
+Then run the following commands:
+
+Download elastic-package:
+⚠️ Note: Find latest [download link here](https://github.com/elastic/elastic-package/releases) of elastic-package_*.*.*_linux_amd64.tar.gz 
+```
+wget https://github.com/elastic/elastic-package/releases/download/v0.83.1/elastic-package_0.83.1_linux_amd64.tar.gz
+```
+
+Create directory for `elastic-package` called `ep` and then extract your download to it:
 
 ```
-wget https://github.com/elastic/elastic-package/releases/download/v0.81.0/elastic-package_0.81.0_linux_amd64.tar.gz #(Find latest download link here elastic-package_*.*.*_linux_amd64.tar.gz - https://github.com/elastic/elastic-package/releases)
-mkdir ~/eptar -xf elastic-package_*.*.*_linux_amd64.tar.gz -C ~/ep
-sudo nano /etc/profile --> Add export PATH="~/ep/:$PATH" to the bottom of the file
+mkdir ~/ep
+tar -xf elastic-package_*.*.*_linux_amd64.tar.gz -C ~/ep
 ```
+
+Now we need to point to the `ep` directory that has `elastic-package` installed in to use anywhere in the os by adding it to our profile
+similar to how we did it with `go`:
+
+```
+sudo nano /etc/profile #--> Add export PATH="~/ep/:$PATH" to the bottom of the file
+```
+
+It will look like this:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/589f6a94-68f4-4dda-93ca-849f8a838ba9)
+
+Save your changes, then to make sure this new PATH works, you will need to restart your Ubuntu instance by stopping and restarting the `LxssManager` service:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/69514de1-b49c-4cc0-8b66-c0b66e37eb4f)
 
 Now let's try to run the elastic-package tool from our home directory.
 
 ```
-elastic-package --version
+elastic-package
 ```
+
+If successful, we should see something like this:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c4ea796c-2de4-4416-8b0e-0090988b11f5)
+
+
 </details>
 
-To summarize, we ...
+To summarize, we installed Ubuntu on Windows 11, Docker and docker-compose, Go and finally, elastic-package. If all of the commands below work without error, we are ready to move on to the initial phase of creating our integration! This is truly the most challenging part of this process.
 
-This concludes ...
+`docker`
+
+`docker-compose`
+
+`go`
+
+`elastic-package`
+
+This concludes the setting up of our environment to start building our integration and managing an Elastic stack.
