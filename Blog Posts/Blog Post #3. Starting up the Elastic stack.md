@@ -1,5 +1,5 @@
 # Blog Post #3. 
-# 🚧Under construction 🏗️
+# 🚧 Under construction 🏗️
 ## Starting up the Elastic stack
 
 Now that we have the `elastic-package` tool (and all of the proper requirements to use it) we can now start up an entire Elastic stack
