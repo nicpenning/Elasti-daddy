@@ -115,6 +115,6 @@ This will go out and download the current snapshot of 8.9.0 and deploy it. Here 
 
 </details>
 
-In summary, we were able to easily deploy the Elastic stack by using the default version but also understand how to use any version which includes an un-released version of the stack and we also figured out how to take down the stack. You can learn more about the `elastic-package` tool [here.](https://github.com/elastic/elastic-package#elastic-package) You may also learn more about the `stack` command that we used in this blog post [here.](https://github.com/elastic/elastic-package#elastic-package-stack)
+In summary, we were able to easily deploy the Elastic stack by using the default version of the stack but also how to use any version which includes an un-released version of the stack and we also figured out how to take down the stack. You can learn more about the `elastic-package` tool [here.](https://github.com/elastic/elastic-package#elastic-package) You may also learn more about the `stack` command that we used in this blog post [here.](https://github.com/elastic/elastic-package#elastic-package-stack)
 
 This concludes the starting up and taking down of the Elastic stack blog post.
