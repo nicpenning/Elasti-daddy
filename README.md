@@ -45,7 +45,7 @@ I am excited to turn my hand written notes into useful visualizations to see wha
   - [Docker](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#2-install-docker-within-ubuntu)
   - [Go](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#3-install-go-within-ubuntu)
   - [elastic-package](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#4-install-elastic-package-within-ubuntu)
-- [ ] [Starting up the Elastic stack](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%233.%20Starting%20up%20the%20Elastic%20stack.md#starting-up-the-elastic-stack)
+- [x] [Starting up the Elastic stack](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%233.%20Starting%20up%20the%20Elastic%20stack.md#starting-up-the-elastic-stack)
 - [ ] Creating a new custom integration (package)
 - [ ] Test integration with the dataset
 - [ ] Modifying the custom integration by adding a Dashboard
