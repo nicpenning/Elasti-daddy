@@ -5,3 +5,45 @@
 Before we can begin building our integration, it would be wise to explain
 what an Elastic integration is. This blog post will cover what an integration 
 is composed of so we can get a handle of what we are building.
+
+Through this post we will do the following:
+
+- Finding Integrations in Kibana
+- Look at an example integration
+- Installing an Integration
+- Understanding Assets
+
+1. Finding Integrations in Kibana
+<details>
+
+To being, let's start up our Elastic stack (if you need to):
+
+```
+elastic-package stack up -v -d --version=8.8.1
+```
+
+Next, let's go to Kibana at https://127.0.0.1:5601 and at the home page, click on "Add Integrations".
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2b44f0e3-35ac-40b5-839c-94a4df9ea39b)
+
+What you will see before you are all of the current integrations that have been published to the Elastic Package Repository available to the public.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4eeffb8c-91eb-449f-9174-a895880e39c2)
+
+From the screenshot above you will see that there are 321 integrations across all categories at this time of writing! Fortunately each integration is
+sorted into the various categories such as Productivity, Network, or Security to name a few.
+
+You can then click on an integration to find out more details about it. You will do that in the next part of this blog post.
+
+</details>
+
+2. Look at an example integration
+<details>
+
+Let's take a gander at the Microsoft DHCP integration since it uses a CSV file.
+
+</details>
+
+3. Installing an Integration
+
+4. Understanding Assets
