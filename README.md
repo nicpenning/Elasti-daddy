@@ -46,7 +46,7 @@ I am excited to turn my hand written notes into useful visualizations to see wha
   - [Go](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#3-install-go-within-ubuntu)
   - [elastic-package](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#4-install-elastic-package-within-ubuntu)
 - [x] [Starting up the Elastic stack](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%233.%20Starting%20up%20the%20Elastic%20stack.md#starting-up-the-elastic-stack)
-- [ ] Gaining a basic understanding of Elastic Integrations
+- [ ] [Gaining a basic understanding of Elastic Integrations](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%234.%20Gaining%20a%20basic%20understanding%20of%20Elastic%20Integrations)
 - [ ] Creating a new custom integration (package)
 - [ ] Testing the integration with the dataset
 - [ ] Modifying the custom integration by adding a Dashboard
