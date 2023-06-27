@@ -43,6 +43,17 @@ You can then click on an integration to find out more details about it. You will
 
 Let's take a gander at the Microsoft DHCP integration since it uses a CSV file.
 
+Type in dhcp in the search box and then click on the Microsoft DHCP integration.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2f7d498f-e94e-40c8-88fd-7987f46cd8ec)
+
+This will take you to the integration details.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f004ccb9-ce8a-42f7-bb5c-bb636d7f0ab2)
+
+1. Overview
+2. ...
+
 </details>
 
 #### 3. Install/Remove an Integration
