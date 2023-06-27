@@ -14,7 +14,7 @@ Through this post we will do the following:
 - Understand Elasticsearch Assets
 - Upgrade an integration
 
-1. Finding Integrations in Kibana
+#### 1. Find Integrations in Kibana
 <details>
 
 To begin, let's start up our Elastic stack (if you need to):
@@ -38,13 +38,15 @@ You can then click on an integration to find out more details about it. You will
 
 </details>
 
-2. Look at an example integration
+#### 2. Look at an example integration
 <details>
 
 Let's take a gander at the Microsoft DHCP integration since it uses a CSV file.
 
 </details>
 
-3. Installing an Integration
+#### 3. Install/Remove an Integration
 
-4. Understanding Assets
+#### 4. Understand Assets
+
+#### 5. Upgrade an Integration
