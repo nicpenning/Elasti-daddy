@@ -8,15 +8,16 @@ is composed of so we can get a handle of what we are building.
 
 Through this post we will do the following:
 
-- Finding Integrations in Kibana
+- Find Integrations in Kibana
 - Look at an example integration
-- Installing an Integration
-- Understanding Assets
+- Install/Remove an Integration
+- Understand Elasticsearch Assets
+- Upgrade an integration
 
 1. Finding Integrations in Kibana
 <details>
 
-To being, let's start up our Elastic stack (if you need to):
+To begin, let's start up our Elastic stack (if you need to):
 
 ```
 elastic-package stack up -v -d --version=8.8.1
