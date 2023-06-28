@@ -14,6 +14,7 @@ Through this post we will do the following:
 - Install/Remove an Integration
 - Understand Elasticsearch Assets
 - Add Integration to Elastic Agent Policy
+- Add Policy to an Elastic Agent
 
 #### 1. Find Integrations in Kibana
 <details>
