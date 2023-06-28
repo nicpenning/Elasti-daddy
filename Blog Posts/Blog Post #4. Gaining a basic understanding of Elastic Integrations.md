@@ -6,6 +6,8 @@ Before we can begin building our Integration, it would be wise to explain
 what an Elastic Integration is. This blog post will cover what an Integration 
 is composed of so we can get a handle of what we are building.
 
+You can find an overwhelming amount of documentation and explanation by Elastic officially at their website [here](https://www.elastic.co/integrations/) but I will share my perspective on the matter. 
+
 Through this post we will do the following:
 
 - Find Integrations in Kibana
