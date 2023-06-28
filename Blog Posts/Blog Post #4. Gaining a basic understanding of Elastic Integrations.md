@@ -125,7 +125,13 @@ Let's start up clicking that Add Microsoft DHCP Integration button.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7764010e-515f-4bf1-a84e-a92ebf27abfb)
 
+Here is a quick run through of the basic settings for the Microsoft DHCP Integration:
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/72cbc066-bb1b-47cc-81f7-aeaf18ea86cf
 
+Here are some settings worth highlighting:
+- Namespace
+- Paths
+- 
 
 </details>
 
