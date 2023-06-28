@@ -126,12 +126,27 @@ Let's start up clicking that Add Microsoft DHCP Integration button.
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7764010e-515f-4bf1-a84e-a92ebf27abfb)
 
 Here is a quick run through of the basic settings for the Microsoft DHCP Integration:
+
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/72cbc066-bb1b-47cc-81f7-aeaf18ea86cf
 
-Here are some settings worth highlighting:
-- Namespace
-- Paths
-- 
+A couple of settings worth noting are the `namespace` and the `Path`. The `namespace` will be part of the data stream once the data is indexed into Elasticsearch. The `Path` is the directory where the file exists in which the Integration will extract the data from. We will use this same setting in our Integration later.
+
+There are some Advanced settings where you can add tags, additional processors, and inspect the Ingest pipelines and mappings.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b775664b-760d-4650-8712-474332ac9d63)
+
+</details>
+
+#### 6. Add Policy to an Elastic Agent
+<details>
+
+You can add an Integration to `New Hosts` or `Existing hosts`. This option presents itself when going through the `Add Microsoft DHCP Integration` steps.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/3a4a77f9-9c64-498d-8c12-6e9dd8dfb85f)
+
+`New Hosts` will simply create a new policy like we did in the step above.
+
+`Existing Hosts` allows you to add the integration directly to a policy that already exists while other Integrations have already been added to it.
 
 </details>
 
