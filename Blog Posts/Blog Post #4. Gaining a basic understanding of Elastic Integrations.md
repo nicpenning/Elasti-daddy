@@ -58,6 +58,6 @@ This will take you to the integration details.
 
 #### 3. Install/Remove an Integration
 
-#### 4. Understand Assets
+#### 4. Understand Elasticsearch Assets
 
 #### 5. Upgrade an Integration
