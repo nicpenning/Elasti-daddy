@@ -53,9 +53,19 @@ This will take you to the Integration details.
 
 1. Overview
 
-Here you will find a high level overview of what the Microsoft DHCP integration does.
+The Overview tab is where you will find a high level overview of what the Microsoft DHCP Imtegration does.
 
-2. ...
+2. Logs
+
+You will then see if the Integration captures Logs, Metrics or Traces and then show an example of that type of data.In the screenshot above, you will notice a log entry example of a Microsoft DHCP log in JSON format.
+
+3. Settings
+
+The settings tab is where we can install the Integration into the Elastic stack. We will see that accomplished later.
+
+4. Add Microsoft DHCP
+
+This button will apply this Integration to a new or existing Agent policy. Whichever agents are assigned the policy that has this Integration will then be expected to ingest Microsoft DHCP logs. Later on we will see the configuration settings for the integration, which interestingly enough, does not exist under the settings tab. 
 
 </details>
 
