@@ -67,7 +67,7 @@ The settings tab is where we can install the Integration into the Elastic stack.
 
 4. Add Microsoft DHCP
 
-This button will apply this Integration to a new or existing Agent policy. Whichever agents are assigned the policy that has this Integration will then be expected to ingest Microsoft DHCP logs. Later on we will see the configuration settings for the integration, which interestingly enough, does not exist under the settings tab. 
+This button will apply this Integration to a new or existing Agent policy and install the Integration if it hasn't been. Whichever agents are assigned the policy that has this Integration will then be expected to ingest Microsoft DHCP logs. Later on we will see the configuration settings for the integration, which interestingly enough, does not exist under the settings tab. 
 
 </details>
 
