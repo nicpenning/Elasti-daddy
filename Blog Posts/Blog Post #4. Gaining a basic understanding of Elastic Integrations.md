@@ -14,7 +14,7 @@ Through this post we will do the following:
 - Look at an example Integration
 - Install/Remove an Integration
 - Understand Elasticsearch Assets
-- Upgrade an Integration
+- Add Integration to Elastic Agent Policy
 
 #### 1. Find Integrations in Kibana
 <details>
@@ -98,6 +98,7 @@ You can remove or even reinstall this Integration by clicking on their respectiv
 </details>
 
 #### 4. Understand Elasticsearch Assets
+<details>
 
 Elasticsearch Assets are a key component to why Elastic Integrations are so useful to the end users. It makes adopting a new Integration into the Elastic stack easy by managing everything in Kibana instead of handling `.yml` files like it was done in the past with the variety of beats.
 
@@ -113,4 +114,21 @@ This is the corresponding Component Tempalte that the Index Template above uses 
 
 In other Integrations, you may have Dashboards and Visualizations that come bundled with it. These are also considered Assets. A screenshot of a dashboard will even show up in the `Overview` tab if there is one. Our integration that we will build will have more than just pipelines so we will see this first hand later.
 
-#### 5. Upgrade an Integration
+</details>
+
+#### 5. Add Integration to Elastic Agent Policy
+<details>
+
+To wrap up this blog post, we will walk through adding this Integration to and Elastic Agent Policy. We don't have any DHCP data to see the installed Integration work first hand, however, we will at least have the foundation of what we can expect when we go to build our integration.
+
+Let's start up clicking that Add Microsoft DHCP Integration button.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7764010e-515f-4bf1-a84e-a92ebf27abfb)
+
+
+
+</details>
+
+In summary, we dove into an Elasticsearch Integration by looking at the details, installing the integration and adding it to a policy.
+
+This concludes the analysis of an Integration blog post.
