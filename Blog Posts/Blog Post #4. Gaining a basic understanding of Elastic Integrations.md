@@ -101,4 +101,16 @@ You can remove or even reinstall this Integration by clicking on their respectiv
 
 Elasticsearch Assets are a key component to why Elastic Integrations are so useful to the end users. It makes adopting a new Integration into the Elastic stack easy by managing everything in Kibana instead of handling `.yml` files like it was done in the past with the variety of beats.
 
+When setting up a new Integration, there are many moving parts to be successful. In this example, the only Elasticsearch assets showing installed are Ingest Pipelines. What also gets installed are Index Templates and Component Templets which are vital to the ingestion of data so that it will have the correct data mappings so we can search and visualize the data properly. A quick example is that if the time stamp of the data was not properly mapped to a Date field, then we would not be able to filter and show results for a specific time frame on the set of data. Another example is if we had a numberical value mapped as a string then we could not build visualizations that could do simple math such as sums or averages.
+
+Here is a screenshot of the Microsoft DHCP Index Template that was installed:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/bd04f506-7252-4ce4-8dcc-fb7cdcebc974)
+
+This is the corresponding Component Tempalte that the Index Template above uses that was also installed, but nothing in the install process will tell you that. You can expect that most Integrations will have an Index Template and likely Comonent Templates.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/fcae0c35-1542-41b6-a71c-3bcea0f524e5)
+
+In other Integrations, you may have Dashboards and Visualizations that come bundled with it. These are also considered Assets. A screenshot of a dashboard will even show up in the `Overview` tab if there is one. Our integration that we will build will have more than just pipelines so we will see this first hand later.
+
 #### 5. Upgrade an Integration
