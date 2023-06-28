@@ -55,24 +55,50 @@ This will take you to the Integration details.
 
 1. Overview
 
-The Overview tab is where you will find a high level overview of what the Microsoft DHCP Imtegration does.
+The Overview tab is where you will find a high level overview of what the Microsoft DHCP Integration does. On the right hand side you will see some details such as version number, Elasticsearch Assets which we will dive into later, the minimum license required to use the Integration and even a link to the Changelog.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/6aa45ae7-ed03-43f3-93f6-9cbf692bed97)
+
 
 2. Logs
 
-You will then see if the Integration captures Logs, Metrics or Traces and then show an example of that type of data.In the screenshot above, you will notice a log entry example of a Microsoft DHCP log in JSON format.
+You will then see if the Integration captures Logs, Metrics or Traces and then show an example of that type of data. In the screenshot above, you will notice a log entry example of a Microsoft DHCP log in JSON format.
+
+Further down the page you will see what potential fields exist as well, which can be very handy if you are looking for a very specific set of data.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/9d5c6e47-f5ce-4cbd-90a5-20d3c14c4d1c)
+
 
 3. Settings
 
 The settings tab is where we can install the Integration into the Elastic stack. We will see that accomplished later.
 
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/3628f02c-8038-44c1-8025-fd6737c80978)
+
 4. Add Microsoft DHCP
 
-This button will apply this Integration to a new or existing Agent policy and install the Integration if it hasn't been. Whichever agents are assigned the policy that has this Integration will then be expected to ingest Microsoft DHCP logs. Later on we will see the configuration settings for the integration, which interestingly enough, does not exist under the settings tab. 
+This button will apply this Integration to a new or existing Agent policy and install the Integration if it hasn't been. Whichever agents are assigned the policy that has this Integration will then be expected to ingest Microsoft DHCP logs. Later on we will see the configuration settings for the integration, which interestingly enough, does not exist under the `Settings` tab.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/426f468d-ea67-4274-b646-eb0ba0932bb7)
 
 </details>
 
 #### 3. Install/Remove an Integration
+<details>
+Let's go ahead and install the Microsoft DHCP Integration. Simply go to the settings page, then click `Install Microsoft DHCP Assets`. You will notice there are 3 of them that were also noted in the earlier screenshot and also in the screen recording below. The 3 assets are Elasticsearch Ingest Pipelines. 
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/e5f2e7f6-f1cd-4d69-a99d-0a9e0a742c60
+
+That's it. The Integration is now installed and is ready to be applied to an agent policy.
+
+You can remove or even reinstall this Integration by clicking on their respective buttons.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/24de646f-13ba-4290-8926-88feb378754b)
+
+</details>
 
 #### 4. Understand Elasticsearch Assets
+
+Elasticsearch Assets are a key component to why Elastic Integrations are so useful to the end users. It makes adopting a new Integration into the Elastic stack easy by managing everything in Kibana instead of handling `.yml` files like it was done in the past with the variety of beats.
 
 #### 5. Upgrade an Integration
