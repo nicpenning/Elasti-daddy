@@ -2,17 +2,17 @@
 # 🚧 Under Construction 🏗 
 ## Gaining a basic understanding of Elastic Integrations
 
-Before we can begin building our integration, it would be wise to explain
-what an Elastic integration is. This blog post will cover what an integration 
+Before we can begin building our Integration, it would be wise to explain
+what an Elastic Integration is. This blog post will cover what an Integration 
 is composed of so we can get a handle of what we are building.
 
 Through this post we will do the following:
 
 - Find Integrations in Kibana
-- Look at an example integration
+- Look at an example Integration
 - Install/Remove an Integration
 - Understand Elasticsearch Assets
-- Upgrade an integration
+- Upgrade an Integration
 
 #### 1. Find Integrations in Kibana
 <details>
@@ -38,7 +38,7 @@ You can then click on an integration to find out more details about it. You will
 
 </details>
 
-#### 2. Look at an example integration
+#### 2. Look at an example Integration
 <details>
 
 Let's take a gander at the Microsoft DHCP integration since it uses a CSV file.
@@ -47,11 +47,14 @@ Type in dhcp in the search box and then click on the Microsoft DHCP integration.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2f7d498f-e94e-40c8-88fd-7987f46cd8ec)
 
-This will take you to the integration details.
+This will take you to the Integration details.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f004ccb9-ce8a-42f7-bb5c-bb636d7f0ab2)
 
 1. Overview
+
+Here you will find a high level overview of what the Microsoft DHCP integration does.
+
 2. ...
 
 </details>
