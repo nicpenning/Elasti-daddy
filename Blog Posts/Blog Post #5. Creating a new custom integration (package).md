@@ -215,6 +215,7 @@ To start, let us fix up the following:
 - Data Stream
 - Field Mappings
 - Ingest Pipeline
+- Read Me
 
 1. Data Stream
 We will start with the Data Stream manifest file by updating the content from the default text that current looks like this:
@@ -235,25 +236,49 @@ streams:
         type: text
         title: Paths
         multi: true
+        show_user: true
+        required: true
         default:
           - ~/feed_me.csv
 ```
+
+⚠️ Note: We added `show_user: true` and `required: true` as additional settings so we can make sure these take effect in the Kibana UI.
 
 ```bash
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me$ nano manifest.yml
 ```
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/a3cf8478-1263-488b-af3d-699f2a0c9847)
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/10a7654f-9fd8-414d-a5af-d3e9fd7615d4)
 
 Save the changes by hitting Crtl-X then `Y` and hit enter.
 
-Let us run our build again and restart our package registry to see our changes.
+We will also update the `policy_templates` section of the `manifest.yml` file that is found in the root of the integration to this:
+
+```yaml
+policy_templates:
+  - name: feed_me
+    title: Feed me
+    description: Collect events for the Elasti-daddy project.
+    inputs:
+      - type: logfile
+        title: Collect events from feed_me.csv
+        description: Collect events from the feed_me.csv for the Elasti-daddy project
+```
+
+Now, let us run our build again and restart our package registry and Elastic stack to see our changes.
+
 
 ```bash
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
 2023/07/07 01:43:12  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
 Build the package
 Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack down
+...snipped for brevity...
+Done
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --version=8.8.1
+...snipped for brevity...
 Done
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
 ...snipped for brevity...
@@ -262,7 +287,66 @@ Done
 
 After restarting the package-registry, let us go check Kibana for our changes:
 
-To be continued...
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/92f425e7-bde7-4276-bd57-aa6d40b482b2)
 
+As you can see above, our integration is now defaulting to our settings that we adjusted in the data stream manifest.yml file!
 
+2. Field Mappings
+
+Okay, let us move on to updating the field mappings by adding a fields.yml file to our data stream.
+
+These are all of the fields, their appropriate mapping, and the file name that we will need to add that into for the integration:
+
+```
+@timestamp : date : base-fields.yml
+Amount (ml/cc) : long : fields.yml
+Count : long : fields.yml
+Duration : long : fields.yml
+End Time : date : fields.yml
+Medicine 💊 : keyword : fields.yml
+Side : keyword : fields.yml
+Start Time : date : fields.yml
+Type : keyword : fields.yml
+```
+
+We will also need to add a description to each field so in the end, each field will need to be added to the appropiate file in this format:
+
+```
+- name: <field_name
+  type: <mapping_type>
+  description: <description of what the field is useful for>
+```
+
+Since `@timestamp` is already included by default in the `base-fields.yml`, then we just need to create the `fields.yml` with the following text:
+
+```
+- name: 'Amount (ml/cc)'
+  type: long
+  description: The volume of substance contained.
+- name: 'Count'
+  type: long
+  description: The total number of items.
+- name: 'Duration'
+  type: long
+  description: The amount of time between the start time and end time.
+- name: 'End Time'
+  type: date
+  description: The end time of the event.
+- name: 'Medicine 💊'
+  type: keyword
+  description: The type of medicine consumed.
+- name: 'Side'
+  type: keyword
+  description: The left or right breast which was fed from.
+- name: 'Start Time'
+  type: date
+  description: The start time of the event.
+- name: 'Type'
+  type: kyword
+  description: The type of event that has occurred.
+```
+
+3. Ingest Pipelines
+
+4. Read Me
 </details>
