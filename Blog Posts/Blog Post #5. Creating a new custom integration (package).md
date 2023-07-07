@@ -320,9 +320,9 @@ We will also need to add a description to each field so in the end, each field w
 Since `@timestamp` is already included by default in the `base-fields.yml`, then we just need to create the `fields.yml` with the following text:
 
 ```
-- name: 'Amount (ml/cc)'
+- name: 'Amount'
   type: long
-  description: The volume of substance contained.
+  description: The volume of substance contained in ml/cc.
 - name: 'Count'
   type: long
   description: The total number of items.
@@ -345,6 +345,18 @@ Since `@timestamp` is already included by default in the `base-fields.yml`, then
   type: kyword
   description: The type of event that has occurred.
 ```
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/fields$ nano fields.yml
+```
+
+Save the text from above into the nano fields.yml as demonstrated above and you should see something like this:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/aa8b801e-ba63-4f84-a4fa-60ccb1a02dfb)
+
+Go ahead and build to make sure there are not any errors.
+
+
 
 3. Ingest Pipelines
 
