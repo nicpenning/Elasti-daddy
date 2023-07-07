@@ -200,12 +200,22 @@ If it worked, then we should see our integration. Let us click on that integrati
 
 This is great! Our base integration is there but there is a lot of work that needs to be done to make this integration usable.
 
-If we click on Add Integration we can see other details that we still need to modify.
+If we click on `Add Elasti-daddy` in the right hand corner we can see other details that we still need to modify.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/36b6241b-4f3e-4f2b-a7e1-2a6a59f16070)
 
-
-..To be continued...
+Let us move on to tweaking a few core settings to make this integration usable with our data set.
 
 </details>
 
+#### 4. Change core settings for Integration to ingest our data
+<details>
+
+To start, let us fix up the following:
+1. Data Stream
+2. Default Log Source
+3. Ingest Pipelines
+
+
+  
+</details>
