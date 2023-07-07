@@ -16,19 +16,17 @@ We start by running `elastic-package create package Elasti-daddy` in our Ubuntu 
 the prompts:
 
 ```bash
-napsta@el33t-b00k-1:~$ elastic-package create package Elasti-daddy
+napsta@el33t-b00k-1:~$ elastic-package create package
 2023/07/06 21:43:15  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
 Create a new package
-? Package name: Elasti-daddy
+? Package name: elasti_daddy
 ? Version: 0.0.1
-? Description: This is a package for preparing and analyzing motherhood and fatherhood data for taking care of a baby.
-The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle
-feeding (milk or formula), milk extraction, etc..
+? Description: This is a package for preparing and analyzing motherhood and fatherhood data for taking care of a baby. The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle feeding (milk or formula), milk extraction, etc..
 ? Categories: custom
 ? Kibana version constraint: ^8.7.1
 ? Required Elastic subscription: basic
 ? Github owner: nicpenning/Elasti-daddy
-New package has been created: Elasti-daddy
+New package has been created: elasti_daddy
 Done
 ```
 
@@ -109,7 +107,102 @@ napsta@el33t-b00k-1:~/Elasti-daddy$ elastic-package build
 Error: can't prepare build directory: can't create new build directory: package can be only built inside of a Git repository (.git folder is used as reference point)
 ```
 
-This is where the documenation from Elastic falls short as this is not covered during the sample development of an integration flow.
+This is where the documentation from Elastic falls short as this is not covered during the sample development of an integration flow.
+
+Let us try to clone this Elasti-daddy repo and place the integration we created inside of it to see if we have any luck. We will create a new directory called GitHub since our repository has the same name as our integration. Then we will create a folder called Integration in our Elasti-daddy repository. Lastly, we will copy the integration into that directory and then try our build again.
+
+```bash
+cd ~/
+napsta@el33t-b00k-1:~$ mkdir GitHub
+napsta@el33t-b00k-1:~$ cd GitHub
+napsta@el33t-b00k-1:~/GitHub$ git clone https://github.com/nicpenning/Elasti-daddy.git
+Cloning into 'Elasti-daddy'...
+remote: Enumerating objects: 335, done.
+remote: Counting objects: 100% (213/213), done.
+remote: Compressing objects: 100% (196/196), done.
+remote: Total 335 (delta 159), reused 17 (delta 17), pack-reused 122
+Receiving objects: 100% (335/335), 98.65 KiB | 711.00 KiB/s, done.
+Resolving deltas: 100% (178/178), done.
+napsta@el33t-b00k-1:~/GitHub$ cd Elasti-daddy/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy$ mkdir Integration
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy$ cp ~/Elasti-daddy/ ~/GitHub/Elasti-daddy/Integration/ -r
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy$ cd Integration/Elasti-daddy/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/Elasti-daddy$ elastic-package build
+2023/07/06 22:45:37  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Build the package
+Error: building package failed: invalid content found in built zip package: found 1 validation error:
+   1. file "/home/napsta/GitHub/Elasti-daddy/build/packages/Elasti-daddy-0.0.1.zip/manifest.yml" is invalid: field name: Does not match pattern '^[a-z0-9_]+$'
+
+```
+
+The error above is due to the fact that we used the `Package Name` as `Elasti-daddy` which is invalid because it must be all lowercase with the option of numbers and an underscore. Instead we had an uppercase character and a dash which caused this build to fail.
+
+To correct this, we will need to rename the directory and adjust the manifest file. It will be quicker to just re-create our integration and data stream. Start in our GitHub/Elasti-daddy/Integration directory and perform the following:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration$ rm Elasti-daddy -r
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration$ elastic-package create package
+2023/07/06 23:39:48  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Create a new package
+? Package name: elasti_daddy
+? Version: 0.0.1
+? Description: This is a package for preparing and analyzing motherhood and fatherhood data for taking care of a baby. The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle feeding (milk or formula), milk extraction, etc..
+? Categories: custom
+? Kibana version constraint: ^8.7.1
+? Required Elastic subscription: basic
+? Github owner: nicpenning/Elasti-daddy
+New package has been created: elasti_daddy
+Done
+
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package create data-stream
+2023/07/06 23:42:12  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Create a new data stream
+? Data stream name: feed_me
+? Data stream title: Feed Me
+? Type: logs
+New data stream has been created: feed_me
+Done
+```
+
+Now we should see `elasti_daddy` as our integration name now for the directory:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/075ae2ec-b870-4a12-8462-dfd7cebbeb6d)
+
+Let us go into the new directory and try our build again.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/06 23:54:02  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Build the package
+Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+```
+
+Success! Now let us see if the integration shows up in our Kibana instance. To do this, we need to refresh our `package-repository` by running `elastic-package stack up -v -d --services package-registry` from our integration directory:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
+...snipped for brevity...
+elastic-package-stack_package-registry_1 is up-to-date
+Starting elastic-package-stack_package-registry_is_ready_1 ... done
+Done
+```
+
+Navigate to Kibana and go to the Integrations page, select `Display Beta Integrations` (since we are using the version number 0.0.1), and then search for Elasti-daddy:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2369c2a5-d4dd-4863-888d-9746e1ac130c)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/cb163083-7111-468a-a4c7-644f5127a003)
+
+If it worked, then we should see our integration. Let us click on that integration to see more details!
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/21e59c08-45bc-4828-b658-30093d3e4760)
+
+This is great! Our base integration is there but there is a lot of work that needs to be done to make this integration usable.
+
+If we click on Add Integration we can see other details that we still need to modify.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/36b6241b-4f3e-4f2b-a7e1-2a6a59f16070)
 
 
 ..To be continued...
