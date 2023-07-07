@@ -137,7 +137,7 @@ Error: building package failed: invalid content found in built zip package: foun
 
 The error above is due to the fact that we used the `Package Name` as `Elasti-daddy` which is invalid because it must be all lowercase with the option of numbers and an underscore. Instead we had an uppercase character and a dash which caused this build to fail.
 
-To correct this, we will need to rename the directory and adjust the manifest file. It will be quicker to just re-create our integration and data stream. Start in our GitHub/Elasti-daddy/Integration directory and perform the following:
+To correct this, we will need to rename the directory and adjust the manifest file. However, it will be quicker to remove our integration and re-create our integration and data stream. Start in our GitHub/Elasti-daddy/Integration directory and perform the following:
 
 ```bash
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration$ rm Elasti-daddy -r
