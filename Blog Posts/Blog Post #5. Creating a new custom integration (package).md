@@ -320,7 +320,7 @@ We will also need to add a description to each field so in the end, each field w
 Since `@timestamp` is already included by default in the `base-fields.yml`, then we just need to create the `fields.yml` with the following text:
 
 ```
-- name: 'Amount'
+- name: 'Amount (ml/cc)'
   type: long
   description: The volume of substance contained in ml/cc.
 - name: 'Count'
@@ -342,7 +342,7 @@ Since `@timestamp` is already included by default in the `base-fields.yml`, then
   type: date
   description: The start time of the event.
 - name: 'Type'
-  type: kyword
+  type: keyword
   description: The type of event that has occurred.
 ```
 
@@ -356,7 +356,60 @@ Save the text from above into the nano fields.yml as demonstrated above and you 
 
 Go ahead and build to make sure there are not any errors.
 
+```
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/fields$ elastic-package build
+2023/07/07 03:57:31  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Build the package
+Error: building package failed: invalid content found in built zip package: found 5 validation errors:
+   1. file "/home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip/data_stream/feed_me/fields/fields.yml" is invalid: field 0.name: Does not match pattern '^[\-*_\/@A-Za-z0-9]+(\.[\-*_\/@A-Za-z0-9]+)*$'
+   2. file "/home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip/data_stream/feed_me/fields/fields.yml" is invalid: field 3.name: Does not match pattern '^[\-*_\/@A-Za-z0-9]+(\.[\-*_\/@A-Za-z0-9]+)*$'
+   3. file "/home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip/data_stream/feed_me/fields/fields.yml" is invalid: field 4.name: Does not match pattern '^[\-*_\/@A-Za-z0-9]+(\.[\-*_\/@A-Za-z0-9]+)*$'
+   4. file "/home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip/data_stream/feed_me/fields/fields.yml" is invalid: field 6.name: Does not match pattern '^[\-*_\/@A-Za-z0-9]+(\.[\-*_\/@A-Za-z0-9]+)*$'
+```
+Wow, there were a lot of errors!
 
+Turns out that the checks for field names are very picky during the build process. So even though we were able to use parenthesis, spaces 
+and even an emoji in a simple index operation, it is not allowed during the building process of an integration. To overcome this, let us 
+change up our field names so we can follow the naming standard that the build process is expecting. Here is our new field list:
+
+```
+- name: 'Amount (ml/cc)'
+  type: long
+  description: The volume of substance contained in ml/cc.
+- name: 'Count'
+  type: long
+  description: The total number of items.
+- name: 'Duration'
+  type: long
+  description: The amount of time between the start time and end time.
+- name: 'End_Time'
+  type: date
+  description: The end time of the event.
+- name: 'Medicine'
+  type: keyword
+  description: The type of medicine consumed.
+- name: 'Side'
+  type: keyword
+  description: The left or right breast which was fed from.
+- name: 'Start_Time'
+  type: date
+  description: The start time of the event.
+- name: 'Type'
+  type: keyword
+  description: The type of event that has occurred.
+```
+
+⚠️ Note: We will have to account for these new field names for our data source, ingest pipelines, and even our Kibana dashboard. Ouch!
+
+Trying our build again, and it seems that we have succeeded.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/fields$ elastic-package build
+2023/07/07 04:08:12  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Build the package
+Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+```
 
 3. Ingest Pipelines
 
