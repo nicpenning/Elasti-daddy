@@ -217,7 +217,11 @@ To start, let us fix up the following:
 - Ingest Pipeline
 
 1. Data Stream
-We will start with the Data Stream manifest file by updating the content from the default text to:
+We will start with the Data Stream manifest file by updating the content from the default text that current looks like this:
+
+ ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/80d97928-e0a4-4f87-92c7-e58fd26061ea)
+
+to:
 
 ```yaml
 title: "Feed Me"
@@ -243,11 +247,22 @@ napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/f
 
 Save the changes by hitting Crtl-X then `Y` and hit enter.
 
-Let us update our changelog now to accomdate this new change. We can do this by using `elastic-package changelog`
+Let us run our build again and restart our package registry to see our changes.
 
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/07 01:43:12  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
+Build the package
+Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
+...snipped for brevity...
+Done
 ```
-elastic-package changelog add --description="Update data stream manifest" --type="enhancement" --version="0.0.2" --link="https://github.com/nicpenning/Elastic-daddy/pull/1"
-```
+
+After restarting the package-registry, let us go check Kibana for our changes:
+
+To be continued...
 
 
 </details>
