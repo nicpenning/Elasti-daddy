@@ -212,10 +212,42 @@ Let us move on to tweaking a few core settings to make this integration usable w
 <details>
 
 To start, let us fix up the following:
+- Data Stream
+- Field Mappings
+- Ingest Pipeline
+
 1. Data Stream
-2. Default Log Source
-3. Ingest Pipelines
+We will start with the Data Stream manifest file by updating the content from the default text to:
+
+```yaml
+title: "Feed Me"
+type: logs
+streams:
+  - input: logfile
+    title: Feed Me Logfile
+    description: Collect events from the feed_me.csv
+    vars:
+      - name: paths
+        type: text
+        title: Paths
+        multi: true
+        default:
+          - ~/feed_me.csv
+```
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me$ nano manifest.yml
+```
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/a3cf8478-1263-488b-af3d-699f2a0c9847)
+
+Save the changes by hitting Crtl-X then `Y` and hit enter.
+
+Let us update our changelog now to accomdate this new change. We can do this by using `elastic-package changelog`
+
+```
+elastic-package changelog add --description="Update data stream manifest" --type="enhancement" --version="0.0.2" --link="https://github.com/nicpenning/Elastic-daddy/pull/1"
+```
 
 
-  
 </details>
