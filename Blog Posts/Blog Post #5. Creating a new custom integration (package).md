@@ -12,7 +12,7 @@ except with a few more details along the way.
 #### 1. Creating the Elasti-Daddy Integration
 <details>
   
-We start by running `elastic-package create package Elasti-daddy` in our Ubuntu on Windows terminal and fill in
+We start by running `elastic-package create package` in our Ubuntu on Windows terminal and fill in
 the prompts:
 
 ```bash
