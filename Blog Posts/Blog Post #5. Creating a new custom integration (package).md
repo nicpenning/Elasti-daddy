@@ -3,7 +3,7 @@
 ## Creating a new custom integration (package)
 
 Now that we have a good understanding of integrations, let us dive into creating the foundation for
-our integration unsing the `elastic-package` tool. You can find Elastic's official `Contributing Guide`
+our integration using the `elastic-package` tool. You can find Elastic's official `Contributing Guide`
 [here](https://github.com/elastic/integrations/blob/main/CONTRIBUTING.md). But I will run us through 
 creating an integration in this blog post. This run through will be simliar to the `Developer workflow: 
 build and test integration` found [here](https://github.com/elastic/integrations/blob/main/docs/developer_workflow_design_build_test_integration.md)
