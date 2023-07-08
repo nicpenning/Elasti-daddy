@@ -215,7 +215,6 @@ To start, let us fix up the following:
 - Data Stream
 - Field Mappings
 - Ingest Pipeline
-- Read Me
 
 1. Data Stream
 We will start with the Data Stream manifest file by updating the content from the default text that current looks like this:
@@ -494,7 +493,14 @@ Here was what we had for our ingest pipelines before with the updated field name
 }
 ```
 
-And here it is in the `YAML` format which is what is expected for the integration that we will store in `default.yml`:
+And below is in the `YAML` format which is what is expected for the integration that we will store in `default.yml`.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/fields$ cd ../elasticsearch/ingest_pipeline/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/elasticsearch/ingest_pipeline$ nano default.yml
+```
+
+Copy and paste this into `default.yml`:
 
 ```YAML
 ---
@@ -536,5 +542,34 @@ on_failure:
     value: '{{ _ingest.on_failure_message }}'
 ```
 
-4. Read Me
+As always, let us restart our package manager, then check Kibana for changes. Only this time, we will need to install the integration to see the changes.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me/elasticsearch/ingest_pipeline$ elastic-package build
+...snipped for brevity...
+Done
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
+...snipped for brevity...
+Done
+```
+
+Install the Elasti-daddy integration in Kibana:
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/cbfa2ad8-9337-4ee2-b508-49be538174c3
+
+Then navigate to the Ingest Pipelines to see if it was installed. We know it will be if it has our ingest processors we specfied instead of the default ones.
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2b-ffdd4b90ee19
+
+Success! Now let's move on to testing the ingest of our data with our integration in the final step of this blog post.
 </details>
+
+#### 4. Ingest data
+<details>
+
+The time has come to ingest our data since our integration is installed. We need to have the location for our `feed_me.csv` file set and then we will add our integration to an Elastic Agent that we will deploy on our laptop hosting this entire stack!
+
+
+ 
+</details>
+
