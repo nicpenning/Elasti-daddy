@@ -309,10 +309,10 @@ Start Time : date : fields.yml
 Type : keyword : fields.yml
 ```
 
-We will also need to add a description to each field so in the end, each field will need to be added to the appropiate file in this format:
+We will also need to add a description to each field so in the end, each field will need to be added to the appropriate file in this format:
 
 ```
-- name: <field_name
+- name: <field_name>
   type: <mapping_type>
   description: <description of what the field is useful for>
 ```
