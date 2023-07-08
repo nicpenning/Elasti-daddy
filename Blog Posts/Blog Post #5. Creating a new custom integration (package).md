@@ -565,7 +565,7 @@ https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2
 Success! Now let's move on to testing the ingest of our data with our integration in the final step of this blog post.
 </details>
 
-#### 4. Ingest data
+#### 5. Ingest data
 <details>
 
 The time has come to ingest our data since our integration is installed. We need to have the location for our `feed_me.csv` file set and then we will add our integration to an Elastic Agent that we will deploy on our laptop hosting this entire stack!
