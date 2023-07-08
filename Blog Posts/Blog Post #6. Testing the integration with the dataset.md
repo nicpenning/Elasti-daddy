@@ -12,13 +12,13 @@ is running locally. Then we will create a policy with our integration and see if
 - Add Policy to Elastic Agent
 - Check for Data Ingestion
 
-  #### 1. Install Elastic Agent
-  <details>
+#### 1. Install Elastic Agent
+<details>
   
-  </details>
+</details>
 
-  #### 2. Create Policy
+#### 2. Create Policy
 
-  #### 3. Add Policy to Elastic Agent
+#### 3. Add Policy to Elastic Agent
 
-  #### 4. Check for Data Ingestion
+#### 4. Check for Data Ingestion
