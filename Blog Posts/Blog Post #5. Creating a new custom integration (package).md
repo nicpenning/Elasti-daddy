@@ -413,5 +413,128 @@ Done
 
 3. Ingest Pipelines
 
+Now let us revist our ingest pipelines and see what we need to change.
+
+With the new field changes, we will need to update our CSV processor to use the correct field names.
+
+Here was what we had for our ingest pipelines before with the updated field names for the `csv` processor in `JSON` format:
+
+```JSON
+{
+  "description": "This is the pipeline for the Elasti-daddy project.",
+  "processors": [
+  {
+    "csv": {
+      "field": "message",
+      "target_fields": [
+        "Medicine",
+        "Start_Time",
+        "End_Time",
+        "Duration",
+        "Side",
+        "Type",
+        "Count",
+        "Amount"
+      ],
+      "ignore_missing": false,
+      "trim": true
+    }
+  },
+  {
+    "date": {
+      "field": "Start_Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "@timestamp",
+	    "timezone": "America/Chicago"
+
+    }
+  },
+  {
+    "date": {
+      "field": "End_Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "End_Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "date": {
+      "field": "Start_Time",
+      "formats": [
+        "M/d/yyyy H:mm"
+      ],
+      "target_field": "Start_Time",
+	    "timezone": "America/Chicago"
+    }
+  },
+  {
+    "convert": {
+      "field": "Amount",
+      "type": "long",
+      "ignore_missing": true
+    }
+  },
+  {
+      "split": {
+        "field": "Medicine",
+        "separator": ",",
+        "ignore_missing": true
+      }
+  },
+  {
+    "remove": {
+      "field": "message"
+    }
+  }
+]
+}
+```
+
+And here it is in the `YAML` format which is what is expected for the integration that we will store in `default.yml`:
+
+```YAML
+---
+description: This is the pipeline for the Elasti-daddy project.
+processors:
+- csv:
+    field: message
+    target_fields: ["Medicine", "Start_Time", "End_Time", "Duration", "Side", "Type", "Count", "Amount"]
+    ignore_missing: true
+    trim: true
+- date:
+    field: Start_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: @timestamp
+    timezone: America/Chicago
+- date:
+    field: End_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: End_Time
+    timezone: America/Chicago
+- date:
+    field: Start_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: Start_Time
+    timezone: America/Chicago
+- convert:
+    field: Amount
+    type: long
+    ignore_missing: true
+- split:
+    field: Medicine
+    separator: ","
+    ignore_missing: true
+- remove:
+    field: message
+on_failure:
+- set:
+    field: error.message
+    value: '{{ _ingest.on_failure_message }}'
+```
+
 4. Read Me
 </details>
