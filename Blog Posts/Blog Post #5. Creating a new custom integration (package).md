@@ -216,7 +216,7 @@ To start, let us fix up the following:
 - Field Mappings
 - Ingest Pipeline
 
-1. Data Stream
+#### Data Stream
 
 We will start with the Data Stream manifest file by updating the content from the default text that current looks like this:
 
@@ -291,7 +291,7 @@ After restarting the package-registry, let us go check Kibana for our changes:
 
 As you can see above, our integration is now defaulting to our settings that we adjusted in the data stream manifest.yml file!
 
-2. Field Mappings
+##### Field Mappings
 
 Okay, let us move on to updating the field mappings by adding a fields.yml file to our data stream.
 
@@ -411,7 +411,7 @@ Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.
 Done
 ```
 
-3. Ingest Pipelines
+##### Ingest Pipelines
 
 Now let us revist our ingest pipelines and see what we need to change.
 
@@ -563,6 +563,7 @@ Then navigate to the Ingest Pipelines to see if it was installed. We know it wil
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2b-ffdd4b90ee19
 
 Success! Now let's move on to testing the ingest of our data with our integration in the final step of this blog post.
+
 </details>
 
 The time has come to ingest our data into the Elastic Stack since our integration is installed and appears to have the correct settings and data stream configured.
