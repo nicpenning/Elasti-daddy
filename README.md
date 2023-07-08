@@ -47,7 +47,7 @@ I am excited to turn my hand written notes into useful visualizations to see wha
   - [elastic-package](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%232.%20Getting%20Started.md#4-install-elastic-package-within-ubuntu)
 - [x] [Starting up the Elastic stack](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%233.%20Starting%20up%20the%20Elastic%20stack.md#starting-up-the-elastic-stack)
 - [x] [Gaining a basic understanding of Elastic Integrations](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%234.%20Gaining%20a%20basic%20understanding%20of%20Elastic%20Integrations.md)
-- [ ] Creating a new custom integration (package)
+- [ ] [Creating a new custom integration (package)](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%235.%20Creating%20a%20new%20custom%20integration%20(package).md)
 - [ ] Testing the integration with the dataset
 - [ ] Modifying the custom integration by adding a Dashboard
   - Changelog
