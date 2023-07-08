@@ -565,12 +565,8 @@ https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2
 Success! Now let's move on to testing the ingest of our data with our integration in the final step of this blog post.
 </details>
 
-#### 5. Ingest data
-<details>
+The time has come to ingest our data into the Elastic Stack since our integration is installed and appears to have the correct settings and data stream configured.
 
-The time has come to ingest our data since our integration is installed. We need to have the location for our `feed_me.csv` file set and then we will add our integration to an Elastic Agent that we will deploy on our laptop hosting this entire stack!
+In summary, we built an Elastic Integration using the `elastic-package` tool and tweaked the data stream for use of our fields and ingest pipelines. 
 
-
- 
-</details>
-
+This concludes the development of the Elastic Integration blog post.
