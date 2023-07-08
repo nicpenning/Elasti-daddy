@@ -19,14 +19,14 @@ the prompts:
 napsta@el33t-b00k-1:~$ elastic-package create package
 2023/07/06 21:43:15  INFO New version is available - v0.83.2. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.83.2
 Create a new package
-? Package name: elasti_daddy
+? Package name: Elasti-daddy
 ? Version: 0.0.1
 ? Description: This is a package for preparing and analyzing motherhood and fatherhood data for taking care of a baby. The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle feeding (milk or formula), milk extraction, etc..
 ? Categories: custom
 ? Kibana version constraint: ^8.7.1
 ? Required Elastic subscription: basic
 ? Github owner: nicpenning/Elasti-daddy
-New package has been created: elasti_daddy
+New package has been created: Elasti-daddy
 Done
 ```
 
