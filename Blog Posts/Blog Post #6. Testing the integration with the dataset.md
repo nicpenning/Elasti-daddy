@@ -24,7 +24,11 @@ able to connect to.
 DNS names because I don't know how to route the DNS names to the host :). This is a simple work around for now. Also, make sure that
 when you add the Fleet Server that you make it the default server.
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d92a8204-59f6-4ab5-b825-96d630a54512)
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/aadec97b-0384-481e-8c91-840afb25ce85)
+
+Again, note that we don't need to install a new Fleet server, we are just giving the Agents another way to connect to the current one.
+
+Here is what your configuration should look like after the changes:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/06aeb39e-8238-4cd0-8f8e-97ae14c05039)
 
@@ -56,7 +60,7 @@ sudo ./elastic-agent install --url=https://127.0.0.1:8220 --enrollment-token={Yo
 Here is what it looked like to install in my terminal:
 
 ```bash
- curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.8.1-linux-x86_64.tar.gz
+curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.8.1-linux-x86_64.tar.gz
 tar xzvf elastic-agent-8.8.1-linux-x86_64.tar.gz
 cd elastic-agent-8.8.1-linux-x86_64
 sudo ./elastic-agent install --url=https://127.0.0.1:8220 --enrollment-token={Your enrollment token} --insecure
@@ -109,6 +113,10 @@ elastic-package stack down
 elastic-package stack up -d -v --version=8.8.1
 elastic-package stack up -v -d --services package-registry
 ```
+
+One thing we forgot to do, is set our policy to use the proper Elasticsearch output. Do this in the integration by selecting our `Local Host Elasticsearch` output:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/76971295-bfa5-4810-bf1a-1539afe01d1e)
 
 Now let us check back on our agent to see if we are seeing any events from the basic system integration that is currently deployed.
 
