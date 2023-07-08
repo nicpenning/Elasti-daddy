@@ -9,6 +9,13 @@ creating an integration in this blog post. This run through will be simliar to t
 build and test integration` found [here](https://github.com/elastic/integrations/blob/main/docs/developer_workflow_design_build_test_integration.md)
 except with a few more details along the way.
 
+Here is what we will cover in this post:
+
+- Creating the Elasti-Daddy Integration
+- Creating the data stream for our Integration
+- Build and test what we have so far
+- Customize Integration Data Stream and add Pipelines
+
 #### 1. Creating the Elasti-Daddy Integration
 <details>
   
@@ -208,7 +215,7 @@ Let us move on to tweaking a few core settings to make this integration usable w
 
 </details>
 
-#### 4. Change core settings for Integration to ingest our data
+#### 4. Customize Integration Data Stream and add Pipelines
 <details>
 
 To start, let us fix up the following:
