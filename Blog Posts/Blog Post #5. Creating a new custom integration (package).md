@@ -217,6 +217,7 @@ To start, let us fix up the following:
 - Ingest Pipeline
 
 1. Data Stream
+
 We will start with the Data Stream manifest file by updating the content from the default text that current looks like this:
 
  ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/80d97928-e0a4-4f87-92c7-e58fd26061ea)
@@ -249,7 +250,7 @@ napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/f
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/10a7654f-9fd8-414d-a5af-d3e9fd7615d4)
 
-Save the changes by hitting Crtl-X then `Y` and hit enter.
+Save the changes by hitting Crtl-X then Y and hit enter.
 
 We will also update the `policy_templates` section of the `manifest.yml` file that is found in the root of the integration to this:
 
@@ -372,7 +373,7 @@ and even an emoji in a simple index operation, it is not allowed during the buil
 change up our field names so we can follow the naming standard that the build process is expecting. Here is our new field list:
 
 ```
-- name: 'Amount (ml/cc)'
+- name: 'Amount'
   type: long
   description: The volume of substance contained in ml/cc.
 - name: 'Count'
