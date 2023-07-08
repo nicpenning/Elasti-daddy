@@ -1,5 +1,4 @@
 # Blog Post #5.
-# 🚧 Under Construction 🏗️
 ## Creating a new custom integration (package)
 
 Now that we have a good understanding of integrations, let us dive into creating the foundation for
@@ -19,8 +18,7 @@ Here is what we will cover in this post:
 #### 1. Creating the Elasti-Daddy Integration
 <details>
   
-We start by running `elastic-package create package` in our Ubuntu on Windows terminal and fill in
-the prompts:
+We start by running `elastic-package create package` in our Ubuntu on Windows terminal and fill in the prompts:
 
 ```bash
 napsta@el33t-b00k-1:~$ elastic-package create package
@@ -142,9 +140,11 @@ Error: building package failed: invalid content found in built zip package: foun
 
 ```
 
-The error above is due to the fact that we used the `Package Name` as `Elasti-daddy` which is invalid because it must be all lowercase with the option of numbers and an underscore. Instead we had an uppercase character and a dash which caused this build to fail.
+The error above is due to the fact that we used the `Package Name` as `Elasti-daddy` which is invalid because it must be all 
+lowercase with the option of numbers and an underscore. Instead we had an uppercase character and a dash which caused this build to fail.
 
-To correct this, we will need to rename the directory and adjust the manifest file. However, it will be quicker to remove our integration and re-create our integration and data stream. Start in our GitHub/Elasti-daddy/Integration directory and perform the following:
+To correct this, we will need to rename the directory and adjust the manifest file. However, it will be quicker to remove our integration
+and re-create our integration and data stream. Start in our GitHub/Elasti-daddy/Integration directory and perform the following:
 
 ```bash
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration$ rm Elasti-daddy -r
@@ -185,7 +185,8 @@ Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.
 Done
 ```
 
-Success! Now let us see if the integration shows up in our Kibana instance. To do this, we need to refresh our `package-repository` by running `elastic-package stack up -v -d --services package-registry` from our integration directory:
+Success! Now let us see if the integration shows up in our Kibana instance. To do this, we need to refresh our `package-repository` by 
+running `elastic-package stack up -v -d --services package-registry` from our integration directory:
 
 ```bash
 napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
@@ -195,7 +196,8 @@ Starting elastic-package-stack_package-registry_is_ready_1 ... done
 Done
 ```
 
-Navigate to Kibana and go to the Integrations page, select `Display Beta Integrations` (since we are using the version number 0.0.1), and then search for Elasti-daddy:
+Navigate to Kibana and go to the Integrations page, select `Display Beta Integrations` (since we are using the version number 0.0.1), 
+and then search for Elasti-daddy:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2369c2a5-d4dd-4863-888d-9746e1ac130c)
 
@@ -565,17 +567,20 @@ Install the Elasti-daddy integration in Kibana:
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/cbfa2ad8-9337-4ee2-b508-49be538174c3
 
-Then navigate to the Ingest Pipelines to see if it was installed. We know it will be if it has our ingest processors we specfied instead of the default ones.
+Then navigate to the Ingest Pipelines to see if it was installed. We know it will be if it has our ingest processors we specfied instead
+of the default ones.
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2b-ffdd4b90ee19
 
-As an added bonus, we can verify that our `Index Template` and `Component Templates` were installed with the proper mappings that we supplied in the `fields.yml` file.
+As an added bonus, we can verify that our `Index Template` and `Component Templates` were installed with the proper mappings that we 
+supplied in the `fields.yml` file.
 
 Go to Stack Management -> Index Management and search for elasti_daddy:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c986735c-728c-4e64-891d-b862ea645188)
 
-The `Index Template` will be composed of a few `Component Templates` and 1 of those is what will have our fields in it. It will be called the `logs-elasti_daddy.feed_me@package` component template. We will see that in our `Index Template` when we click on it:
+The `Index Template` will be composed of a few `Component Templates` and 1 of those is what will have our fields in it. It will be 
+called the `logs-elasti_daddy.feed_me@package` component template. We will see that in our `Index Template` when we click on it:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e07af2b3-52fd-4ce5-9155-384f22458aed)
 
@@ -589,7 +594,8 @@ We see that our mappings have been added, so the Elastic Stack has been equipped
 
 </details>
 
-The time has come to ingest our data into the Elastic Stack since our integration is installed and appears to have the correct settings and data stream configured.
+The time has come to ingest our data into the Elastic Stack since our integration is installed and appears to have the correct 
+settings and data stream configured.
 
 In summary, we built an Elastic Integration using the `elastic-package` tool and tweaked the data stream for use of our fields and ingest pipelines. 
 
