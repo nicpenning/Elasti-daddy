@@ -14,7 +14,104 @@ is running locally. Then we will create a policy with our integration and see if
 
 #### 1. Install Elastic Agent
 <details>
-  
+
+We will install the Elastic Agent before adding our policy that includes our Integration inside of it. To do this, we will be making
+a few changes to the Fleet server to ensure that our Ubuntu on Windows can communicate with the Elastic Stack that was stood up by
+the `elastic-package` tool. Navigate to the Fleet Settings and add a new Fleet server and Elasticsearch server that the agent will be
+able to connect to.
+
+⚠️ Note: We are not creating a new Fleet server or Elasticsearch server, but instead we are using their IP addresses instead of their
+DNS names because I don't know how to route the DNS names to the host :). This is a simple work around for now. Also, make sure that
+when you add the Fleet Server that you make it the default server.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d92a8204-59f6-4ab5-b825-96d630a54512)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/06aeb39e-8238-4cd0-8f8e-97ae14c05039)
+
+The caveat for the Elasticsearch server that we added is that you need to also copy the fingerprint from the current configuration:
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/e552e8f5-11fd-4633-a4fb-f10fd8fd2181
+
+Once those steps are completed, it is time to install our Elastic Agent.
+
+Go back to Fleet and then click on Add Agent:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/0aa39fa2-45fe-49c8-bf0b-2cbf0d1b2495)
+
+There will be a flyout and most likely will have the Linux installation already selected:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/0e1b4e40-8ade-4582-a7a6-7f5aae0d3e35)
+
+Make sure that the command is using https://127.0.0.1:8220 and **not** https://fleet-server:8220.
+
+Copy the commands and put them in a text editor or run them one by one.
+
+Please note, we need to adjust the last install command to use `--insecure` because we added a fleet server without
+manaing the encryption. So the command to install will look something like this:
+
+```bash
+sudo ./elastic-agent install --url=https://127.0.0.1:8220 --enrollment-token={Your token goes here}= --insecure
+```
+
+Here is what it looked like to install in my terminal:
+
+```bash
+ curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.8.1-linux-x86_64.tar.gz
+tar xzvf elastic-agent-8.8.1-linux-x86_64.tar.gz
+cd elastic-agent-8.8.1-linux-x86_64
+sudo ./elastic-agent install --url=https://127.0.0.1:8220 --enrollment-token={Your enrollment token} --insecure
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  513M  100  513M    0     0  19.8M      0  0:00:25  0:00:25 --:--:-- 20.5M
+elastic-agent-8.8.1-linux-x86_64/NOTICE.txt
+elastic-agent-8.8.1-linux-x86_64/README.md
+...snipped for brevity...
+Elastic Agent will be installed at /opt/Elastic/Agent and will run as a service. Do you want to continue? [Y/n]:Y
+{"log.level":"warn","@timestamp":"2023-07-07T10:25:25.003-0500","log.logger":"tls","log.origin":{"file.name":"tlscommon/tls_config.go","file.line":104},"message":"SSL/TLS verifications disabled.","ecs.version":"1.6.0"}
+{"log.level":"info","@timestamp":"2023-07-07T10:25:25.870-0500","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":478},"message":"Starting enrollment to URL: https://127.0.0.1:8220/","ecs.version":"1.6.0"}
+{"log.level":"warn","@timestamp":"2023-07-07T10:25:26.086-0500","log.logger":"tls","log.origin":{"file.name":"tlscommon/tls_config.go","file.line":104},"message":"SSL/TLS verifications disabled.","ecs.version":"1.6.0"}
+{"log.level":"info","@timestamp":"2023-07-07T10:25:26.935-0500","log.origin":{"file.name":"cmd/enroll_cmd.go","file.line":276},"message":"Successfully triggered restart on running Elastic Agent.","ecs.version":"1.6.0"}
+Successfully enrolled the Elastic Agent.
+Elastic Agent has been successfully installed.
+```
+
+If we are successful, we should see a healthy agent show up in our Fleet:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/1263cd9b-17e3-43a8-8d77-e15e7f5e4fee)
+
+Success!
+
+However, we are not seeing any events from our agent. Notice the the last activity was "yesterday". To correct this, I am going to adjust the profile
+of the `elastic-package` tool to have Elasticsearch listen on 127.0.0.1:9200. To do this, I modified my profile here:
+
+```bash
+/home/napsta/.elastic-package/profiles/default/stack/snapshot.yml
+```
+
+⚠️ Note: You will need to change `napsta` to your username in your environment.
+
+Then I tweaked the line `- "ELASTICSEARCH_HOST=https://elasticsearch:9200"` and `"FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"` to 127.0.0.1:
+
+```bash
+...snipped for brevity...
+environment:
+    - "ELASTICSEARCH_HOST=https://127.0.0.1:9200"
+    - "FLEET_SERVER_CERT=/etc/ssl/elastic-agent/cert.pem"
+    - "FLEET_SERVER_CERT_KEY=/etc/ssl/elastic-agent/key.pem"
+    - "FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"
+...snipped for brevity...
+```
+
+After I made these changes, I then saved them and took the stack down and brought it back up as we have done in the past.
+
+```bash
+elastic-package stack down
+elastic-package stack up -d -v --version=8.8.1
+elastic-package stack up -v -d --services package-registry
+```
+
+Now let us check back on our agent to see if we are seeing any events from the basic system integration that is currently deployed.
+
 </details>
 
 #### 2. Create Policy
