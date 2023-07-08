@@ -508,25 +508,25 @@ processors:
 - date:
     field: Start_Time
     formats: ["M/d/yyyy H:mm"]
-    target_field: @timestamp
-    timezone: America/Chicago
+    target_field: '@timestamp'
+    timezone: 'America/Chicago'
 - date:
     field: End_Time
     formats: ["M/d/yyyy H:mm"]
-    target_field: End_Time
-    timezone: America/Chicago
+    target_field: 'End_Time'
+    timezone: 'America/Chicago'
 - date:
     field: Start_Time
     formats: ["M/d/yyyy H:mm"]
-    target_field: Start_Time
-    timezone: America/Chicago
+    target_field: 'Start_Time'
+    timezone: 'America/Chicago'
 - convert:
     field: Amount
     type: long
     ignore_missing: true
 - split:
     field: Medicine
-    separator: ","
+    separator: ','
     ignore_missing: true
 - remove:
     field: message
