@@ -562,7 +562,23 @@ Then navigate to the Ingest Pipelines to see if it was installed. We know it wil
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/e99ce47b-0df8-48a9-ae2b-ffdd4b90ee19
 
-Success! Now let's move on to testing the ingest of our data with our integration in the final step of this blog post.
+As an added bonus, we can verify that our `Index Template` and `Component Templates` were installed with the proper mappings that we supplied in the `fields.yml` file.
+
+Go to Stack Management -> Index Management and search for elasti_daddy:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c986735c-728c-4e64-891d-b862ea645188)
+
+The `Index Template` will be composed of a few `Component Templates` and 1 of those is what will have our fields in it. It will be called the `logs-elasti_daddy.feed_me@package` component template. We will see that in our `Index Template` when we click on it:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e07af2b3-52fd-4ce5-9155-384f22458aed)
+
+Next, let us find the `Component Template` used for our integration (remember that this is also called a `package`):
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d02e821d-8f3b-486f-b1e8-0060f265c7cf)
+
+We see that our mappings have been added, so the Elastic Stack has been equipped to handle our data.
+
+🎉 Success!
 
 </details>
 
