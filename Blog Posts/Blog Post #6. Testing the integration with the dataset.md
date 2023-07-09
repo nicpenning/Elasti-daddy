@@ -17,8 +17,7 @@ is running locally. Then we will create a policy with our integration and see if
 
 We will install the Elastic Agent before adding our policy that includes our Integration inside of it. To do this, we will be making
 a few changes to the Fleet server to ensure that our Ubuntu on Windows can communicate with the Elastic Stack that was stood up by
-the `elastic-package` tool. Navigate to the Fleet Settings and add a new Fleet server and Elasticsearch server that the agent will be
-able to connect to.
+the `elastic-package` tool. 
 
 ⚠️ Note: As I was going through this blog, I found out my date was over a day off. You can check the date of your Ubuntu on Windows by running `date` and reviewing the output. If it is incorrect, please execute `sudo hwclock -s` in your terminal to correct this.
 
@@ -50,7 +49,8 @@ elastic-package stack up -d -v --version=8.8.1
 elastic-package stack up -v -d --services package-registry
 ```
 
-Now, let us adjust our Fleet settings so we can install our Elastic Agent Ubuntu.
+Now, let us adjust our Fleet settings so we can install our Elastic Agent on Ubuntu. Navigate to the Fleet Settings and add a new Fleet server and Elasticsearch server that the agent will be
+able to connect to.
 
 ⚠️ Note: We are not creating a new Fleet server or Elasticsearch server, but instead we are using their IP addresses instead of their
 DNS names because I don't know how to route the DNS names to the host :). This is a simple work around for now. Also, make sure that
