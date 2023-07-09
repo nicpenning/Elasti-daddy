@@ -3,7 +3,7 @@
 ## Testing the integration with the dataset
 
 We have the Elasti-daddy integration installed with what we believe to be the correct data stream, fields, and ingest pipeline.
-The next step is to add the integration to an Elastic Agent that has access to our `feed_me` file. Through this blog post we
+The next step is to add the integration to an Elastic Agent that has access to our `Feed Me.csv` file. Through this blog post we
 will aim to install an Elastic Agent on our Ubuntu on Windows system so that it can have direct access to our Elastic Stack that
 is running locally. Then we will create a policy with our integration and see if we can get the data ingested!
 
