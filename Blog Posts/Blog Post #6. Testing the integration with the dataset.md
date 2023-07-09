@@ -72,7 +72,7 @@ After that, let us adjust the policy to use our new Elasticsearch and Fleet serv
 
 Do this in the policy by selecting our `Local Host Elasticsearch` output:
 
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/76971295-bfa5-4810-bf1a-1539afe01d1e)
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/4f7bcc20-b9cc-4e55-aeb1-a46b4c8b5ee9
 
 Once those steps are completed, it is time to install our Elastic Agent.
 
