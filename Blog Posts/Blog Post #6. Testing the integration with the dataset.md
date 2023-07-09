@@ -89,7 +89,7 @@ Make sure that the command is using https://127.0.0.1:8220 and **not** https://f
 Copy the commands and put them in a text editor or run them one by one.
 
 Please note, we need to adjust the last install command to use `--insecure` because we added a fleet server without
-manaing the encryption. So the command to install will look something like this:
+managing the encryption. So the command to install will look something like this:
 
 ```bash
 sudo ./elastic-agent install --url=https://127.0.0.1:8220 --enrollment-token={Your token goes here}= --insecure
