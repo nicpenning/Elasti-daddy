@@ -1,6 +1,6 @@
 # Blog Post #6.
 # 🚧 Under Construction 🏗️
-## Testing the integration with the dataset.md
+## Testing the integration with the dataset
 
 We have the Elasti-daddy integration installed with what we believe to be the correct data stream, fields, and ingest pipeline.
 The next step is to add the integration to an Elastic Agent that has access to our `feed_me` file. Through this blog post we
