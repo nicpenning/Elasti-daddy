@@ -20,6 +20,38 @@ a few changes to the Fleet server to ensure that our Ubuntu on Windows can commu
 the `elastic-package` tool. Navigate to the Fleet Settings and add a new Fleet server and Elasticsearch server that the agent will be
 able to connect to.
 
+⚠️ Note: As I was going through this blog, I found out my date was over a day off. You can check the date of your Ubuntu on Windows by running `date` and reviewing the output. If it is incorrect, please execute `sudo hwclock -s` in your terminal to correct this.
+
+We need to adjust the profile of the `elastic-package` tool to have Elasticsearch listen on 127.0.0.1:9200. To do this, I modified my profile here:
+
+```bash
+/home/napsta/.elastic-package/profiles/default/stack/snapshot.yml
+```
+
+⚠️ Note: You will need to change `napsta` to your username in your environment.
+
+Then I tweaked the line `- "ELASTICSEARCH_HOST=https://elasticsearch:9200"` and `"FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"` to 127.0.0.1:
+
+```bash
+...snipped for brevity...
+environment:
+    - "ELASTICSEARCH_HOST=https://127.0.0.1:9200"
+    - "FLEET_SERVER_CERT=/etc/ssl/elastic-agent/cert.pem"
+    - "FLEET_SERVER_CERT_KEY=/etc/ssl/elastic-agent/key.pem"
+    - "FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"
+...snipped for brevity...
+```
+
+After I made these changes, I then saved them and took the stack down and brought it back up as we have done in the past.
+
+```bash
+elastic-package stack down
+elastic-package stack up -d -v --version=8.8.1
+elastic-package stack up -v -d --services package-registry
+```
+
+Now, let us adjust our Fleet settings so we can install our Elastic Agent Ubuntu.
+
 ⚠️ Note: We are not creating a new Fleet server or Elasticsearch server, but instead we are using their IP addresses instead of their
 DNS names because I don't know how to route the DNS names to the host :). This is a simple work around for now. Also, make sure that
 when you add the Fleet Server that you make it the default server.
@@ -35,6 +67,12 @@ Here is what your configuration should look like after the changes:
 The caveat for the Elasticsearch server that we added is that you need to also copy the fingerprint from the current configuration:
 
 https://github.com/nicpenning/Elasti-daddy/assets/5582679/e552e8f5-11fd-4633-a4fb-f10fd8fd2181
+
+After that, let us adjust the policy to use our new Elasticsearch and Fleet servers.
+
+Do this in the policy by selecting our `Local Host Elasticsearch` output:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/76971295-bfa5-4810-bf1a-1539afe01d1e)
 
 Once those steps are completed, it is time to install our Elastic Agent.
 
@@ -85,40 +123,9 @@ If we are successful, we should see a healthy agent show up in our Fleet:
 
 Success!
 
-However, we are not seeing any events from our agent. Notice the the last activity was "yesterday". To correct this, I am going to adjust the profile
-of the `elastic-package` tool to have Elasticsearch listen on 127.0.0.1:9200. To do this, I modified my profile here:
-
-```bash
-/home/napsta/.elastic-package/profiles/default/stack/snapshot.yml
-```
-
-⚠️ Note: You will need to change `napsta` to your username in your environment.
-
-Then I tweaked the line `- "ELASTICSEARCH_HOST=https://elasticsearch:9200"` and `"FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"` to 127.0.0.1:
-
-```bash
-...snipped for brevity...
-environment:
-    - "ELASTICSEARCH_HOST=https://127.0.0.1:9200"
-    - "FLEET_SERVER_CERT=/etc/ssl/elastic-agent/cert.pem"
-    - "FLEET_SERVER_CERT_KEY=/etc/ssl/elastic-agent/key.pem"
-    - "FLEET_SERVER_ELASTICSEARCH_HOST=https://127.0.0.1:9200"
-...snipped for brevity...
-```
-
-After I made these changes, I then saved them and took the stack down and brought it back up as we have done in the past.
-
-```bash
-elastic-package stack down
-elastic-package stack up -d -v --version=8.8.1
-elastic-package stack up -v -d --services package-registry
-```
-
-One thing we forgot to do, is set our policy to use the proper Elasticsearch output. Do this in the integration by selecting our `Local Host Elasticsearch` output:
-
-![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/76971295-bfa5-4810-bf1a-1539afe01d1e)
-
 Now let us check back on our agent to see if we are seeing any events from the basic system integration that is currently deployed.
+
+
 
 </details>
 
