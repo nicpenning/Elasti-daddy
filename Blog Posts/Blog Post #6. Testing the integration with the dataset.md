@@ -262,5 +262,24 @@ After refreshing, and scrolling through the document, we can see that our fields
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/20914121-883b-4aa6-8c76-3681fa33150c)
 
+The last thing we will do to wrap up this post is select all of the fields that we had created as custom fields to show them as columns in `Discover`. 
+To do this, we can click on the icon to the left of the document count to expand the window:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/28ae41ee-1b81-451d-b7fa-f51ba537376c)
+
+Then hover over the fields we want to add as columns and hit the `+` sign and see them add to the right hand side as columns.
+
+We can then reorganize them to get a better idea of how the data lives in the CSV which makes it easier to interpret.
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/3bd3ff77-0618-40dd-919e-6dc79d56255e
+
+As we scroll through the data, it appears that most of the columns have data as they are expected to.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/f7738a69-b9ed-46e8-bb17-466d1f8f0036)
 
 </details>
+
+In summary, we were able to install our integration and ingest data from the `Feed Me.csv` provided from this project.
+
+This concludes and proves that we are able to ingest data with our integration. The rest of the blog posts will refine the integration so that it can include
+our dashboard as we saw in the first blog post, but also give a better text inside of the Integration page when it gets installed.
