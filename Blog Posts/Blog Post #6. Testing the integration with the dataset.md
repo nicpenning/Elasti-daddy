@@ -226,7 +226,7 @@ I will go back to Feed Me Policy and edit the integration.
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b69aa92c-9947-4d94-ac9b-cba9ac32af37)
 
 This will correct the health of the agent, however, I had an oversight on the relative path that I had selected for our `Feed Me.csv`.
-It is worth mentioned that the Elastic Agent runs as a root or system user, so that relative path will not work for us. So instead, we
+It is worth mentioning that the Elastic Agent runs as a root or system user, so that relative path will not work for us. So instead, we
 will put in the full path for the file we wish to ingest:
 
 ```
