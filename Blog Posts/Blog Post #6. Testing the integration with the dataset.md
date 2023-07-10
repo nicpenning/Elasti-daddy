@@ -141,6 +141,14 @@ Success!
 </details>
 
 #### 2. Create Policy
+<details>
+
+Starting at the main Fleet page, let us add a new policy called `Feed Me`:
+
+[Screenshots/Create new policy.mp4](https://github.com/nicpenning/Elasti-daddy/blob/main/Screenshots/Create%20new%20policy.mp4)https://github.com/nicpenning/Elasti-daddy/blob/main/Screenshots/Create%20new%20policy.mp4
+
+
+</details>
 
 #### 3. Add Policy to Elastic Agent
 
