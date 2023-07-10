@@ -1,5 +1,4 @@
 # Blog Post #6.
-# 🚧 Under Construction 🏗️
 ## Testing the integration with the dataset
 
 We have the Elasti-daddy integration installed with what we believe to be the correct data stream, fields, and ingest pipeline.
