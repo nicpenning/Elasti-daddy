@@ -153,7 +153,12 @@ Now we should see that our policy was created:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/ccf33e0c-0d1f-4657-8f8e-d695b793afa1)
 
-Next, click on our newly created policy then Add Integration:
+⚠️ Note: We made need to set the settings of the Policy to use our Localhost Elasticsearch and Fleet server like we did with the System Integration
+if we did not make them the defaults. So go ahead and do that now by clicking on our newly created policy:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/52b5eb51-9765-410c-b3b1-569adb1490ce)
+
+After you do the above then go back to the Integrations Tab then click Add Integration:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/75e1af56-0cce-4e26-9ca4-68829eb4e7c2)
 
@@ -172,13 +177,54 @@ click `Save and Continue`:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c99a007f-9f59-4b80-9d4e-6740b98b56b1)
 
-Lastly, click `Add Elastic Agent Later`:
+Lastly, click `Add Elastic Agent later` since we will do that in the next step:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2e45fcf0-c039-462d-905a-4fc36ddaf89f)
-
 
 </details>
 
 #### 3. Add Policy to Elastic Agent
+<details>
+Now is the time to add our Policy that contains our Integration. From the Fleet Agents page, select the `...` under actions beside our Ubuntu host and
+then select `Assign to new policy`:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2282f6b2-58bd-41bf-b54c-1be8de711151)
+
+A dialog box will pop up where we can then select your `Feed Me` policy then click `Assign Policy`:
+
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/3b25ee19-0d8d-45b2-91fd-1ea7047c39c3
+
+We should now see our host with the new policy:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/300a2237-7486-49e3-a48e-56609f47958b)
+
+</details>
 
 #### 4. Check for Data Ingestion
+<details>
+
+Now it is time to see if our Integration can ingest data from the `Feed Me.csv` file.
+
+If you remember correctly, we made the default location for the file path `~/feed_me.csv` which immediately tells us that this integration will be looking for
+a file that does not current exist. So instead, we will update our integration to where the current file currently exists and with it's current name.
+
+You can move the file and name it whatever you wish but I will use the following directory to ingest the data:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Data$ ls
+'Feed Me.csv'
+```
+
+This means we will need to update the Integration to use `~/GitHub/Elasti-daddy/Data/Feed Me.csv`.
+
+I will go back to Feed Me Policy and edit the integration.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/6e72695d-0337-4aad-a716-0dd460d6d20f)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/85db0247-9a42-4e6d-a2c9-dc1229d3131b)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b69aa92c-9947-4d94-ac9b-cba9ac32af37)
+
+
+
+</details>
