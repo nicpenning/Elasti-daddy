@@ -145,9 +145,34 @@ Success!
 
 Starting at the main Fleet page, let us add a new policy called `Feed Me`:
 
-https://github.com/nicpenning/Elasti-daddy/raw/main/Screenshots/Create%20new%20policy.mp4
-<video src="https://github.com/nicpenning/Elasti-daddy/raw/main/Screenshots/Create%20new%20policy.mp4" controls="controls" style="max-width: 730px;">
-</video>
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/4aa575e1-0310-4410-a1f8-072861b23e0f)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7eddb266-ae7f-4523-afce-a854fefc34f2)
+
+Now we should see that our policy was created:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/ccf33e0c-0d1f-4657-8f8e-d695b793afa1)
+
+Next, click on our newly created policy then Add Integration:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/75e1af56-0cce-4e26-9ca4-68829eb4e7c2)
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/d6f4ef45-cd92-4e66-9a54-aca6bdc1b7d9)
+
+Make sure you have Display Beta Integrations enabled and then search for our Elasti-daddy Integration:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e54c4c53-38ea-4c0a-ba2a-e618e284c4f0)
+
+Now click on the integration then click `Add- Elasti-daddy`
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/ef522d26-8668-4597-b9ce-53faeb2de593)
+
+We can leave most of the defaults but make sure that the Existing Hosts is selected with our new Policy name of Feed Me is the selected option then
+click `Save and Continue`:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c99a007f-9f59-4b80-9d4e-6740b98b56b1)
+
+
 
 </details>
 
