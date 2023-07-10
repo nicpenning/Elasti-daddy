@@ -172,6 +172,9 @@ click `Save and Continue`:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/c99a007f-9f59-4b80-9d4e-6740b98b56b1)
 
+Lastly, click `Add Elastic Agent Later`:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2e45fcf0-c039-462d-905a-4fc36ddaf89f)
 
 
 </details>
