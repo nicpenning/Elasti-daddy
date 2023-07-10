@@ -225,6 +225,42 @@ I will go back to Feed Me Policy and edit the integration.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/b69aa92c-9947-4d94-ac9b-cba9ac32af37)
 
+This will correct the health of the agent, however, I had an oversight on the relative path that I had selected for our `Feed Me.csv`.
+It is worth mentioned that the Elastic Agent runs as a root or system user, so that relative path will not work for us. So instead, we
+will put in the full path for the file we wish to ingest:
+
+```
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Data$ find $(pwd) -name Feed\ Me.csv
+/home/napsta/GitHub/Elasti-daddy/Data/Feed Me.csv
+```
+
+Your output will be different based on your user name if you are following along. Otherwise, you can move the file to a directory like `/tmp/feed_me.csv`
+instead and then put that as the path in the integration for ingest. I chose to use this GitHub path since I will want to make changes to the file and not 
+have to worry about copying the file to a different directory everytime I have a new change.
+
+I will update the integration again to see what happens.
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/bd02de73-3228-49a5-9d60-e593678cdc92)
+
+After we point to our path of our file, let us check `Discover` and use the search bar to find our data stream by entering in this filter: `data_stream.dataset :"elasti_daddy.feed_me" and then selecting `Last 90 days` to make sure we hit our date and timestamps for the data set:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e40d5224-3643-4643-9ebc-aca07f3066ed)
+
+# 🎉 Wow, we did it! 
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/15bd5c44-a5be-477b-95bc-9c22fc2f01f8)
+
+We have over 300 events at this time of writing and the dataset that we used. Let us check out a sample event to see if the fields contain the data 
+that we expected by clicking on the expand (arrows) button on the left hand side of an event:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/229fd6dc-7a0b-4c85-9cf6-8eb7997b8f0e)
+
+Above we can see our `Amount` field. But we also see a `?` which means that we need to refresh our page in our browser so that Kibana can provide the correct
+data view mapping that we had set in our index template. We are using the default logs-* data view which is what caused this.
+
+After refreshing, and scrolling through the document, we can see that our fields have the proper mappings!
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/20914121-883b-4aa6-8c76-3681fa33150c)
 
 
 </details>
