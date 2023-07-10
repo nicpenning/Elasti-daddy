@@ -145,8 +145,9 @@ Success!
 
 Starting at the main Fleet page, let us add a new policy called `Feed Me`:
 
-[Screenshots/Create new policy.mp4](https://github.com/nicpenning/Elasti-daddy/blob/main/Screenshots/Create%20new%20policy.mp4)https://github.com/nicpenning/Elasti-daddy/blob/main/Screenshots/Create%20new%20policy.mp4
-
+https://github.com/nicpenning/Elasti-daddy/raw/main/Screenshots/Create%20new%20policy.mp4
+<video src="https://github.com/nicpenning/Elasti-daddy/raw/main/Screenshots/Create%20new%20policy.mp4" controls="controls" style="max-width: 730px;">
+</video>
 
 </details>
 
