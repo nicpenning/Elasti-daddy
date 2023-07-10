@@ -123,9 +123,20 @@ If we are successful, we should see a healthy agent show up in our Fleet:
 
 Success!
 
-Now let us check back on our agent to see if we are seeing any events from the basic system integration that is currently deployed.
+Now let us check back on our agent to see if we are seeing any events from the basic system integration that is currently deployed. To do this we will navigate
+to Discover:
 
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2b3eb73d-5b97-41d7-9588-0534130f4021)
 
+Then we need to filter out the other two agents that are already deployed that are sending logs to the stack by excluding these agent names:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/2198f8c8-cb7c-48c1-868f-62887bcf1e91)
+
+Now we should remain with some events from today in Discover for our agent using the default `System` integration:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/9accc9c0-f0b3-4ce9-8a54-db01372472ea)
+
+Success!
 
 </details>
 
