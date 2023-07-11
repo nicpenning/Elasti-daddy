@@ -205,7 +205,7 @@ We should now see our host with the new policy:
 Now it is time to see if our Integration can ingest data from the `Feed Me.csv` file.
 
 If you remember correctly, we made the default location for the file path `~/feed_me.csv` which immediately tells us that this integration will be looking for
-a file that does not current exist. So instead, we will update our integration to where the current file currently exists and with it's current name.
+a file that does not currently exist. So instead, we will update our integration to where the current file currently exists and with it's current name (which is case sensitive).
 
 You can move the file and name it whatever you wish but I will use the following directory to ingest the data:
 
