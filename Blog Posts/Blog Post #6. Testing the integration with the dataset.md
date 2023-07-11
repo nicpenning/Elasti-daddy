@@ -241,7 +241,7 @@ I will update the integration again to see what happens.
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/bd02de73-3228-49a5-9d60-e593678cdc92)
 
-After we point to our path of our file, let us check `Discover` and use the search bar to find our data stream by entering in this filter: `data_stream.dataset :"elasti_daddy.feed_me" and then selecting `Last 90 days` to make sure we hit our date and timestamps for the data set:
+After we point to our path of our file, let us check `Discover` and use the search bar to find our data stream by entering in this filter: `data_stream.dataset :"elasti_daddy.feed_me"` and then selecting `Last 90 days` to make sure we hit our date and timestamps for the data set:
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e40d5224-3643-4643-9ebc-aca07f3066ed)
 
