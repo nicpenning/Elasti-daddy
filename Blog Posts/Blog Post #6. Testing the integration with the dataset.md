@@ -167,7 +167,7 @@ Make sure you have Display Beta Integrations enabled and then search for our Ela
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/e54c4c53-38ea-4c0a-ba2a-e618e284c4f0)
 
-Now click on the integration then click `Add- Elasti-daddy`
+Now click on the integration then click `Add Elasti-daddy`
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/ef522d26-8668-4597-b9ce-53faeb2de593)
 
