@@ -1,0 +1,15 @@
+title: "Feed Me"
+type: logs
+streams:
+  - input: logfile
+    title: Feed Me Logfile
+    description: Collect events from the feed_me.csv
+    vars:
+      - name: paths
+        type: text
+        title: Paths
+        multi: true
+        show_user: true
+        required: true
+        default:
+          - ~/feed_me.csv

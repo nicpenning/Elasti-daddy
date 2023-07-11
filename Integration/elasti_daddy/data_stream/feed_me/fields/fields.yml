@@ -1,0 +1,24 @@
+- name: 'Amount'
+  type: long
+  description: The volume of substance contained.
+- name: 'Count'
+  type: long
+  description: The total number of items.
+- name: 'Duration'
+  type: long
+  description: The amount of time between the start time and end time.
+- name: 'End_Time'
+  type: date
+  description: The end time of the event.
+- name: 'Medicine'
+  type: keyword
+  description: The type of medicine consumed.
+- name: 'Side'
+  type: keyword
+  description: The left or right breast which was fed from.
+- name: 'Start_Time'
+  type: date
+  description: The start time of the event.
+- name: 'Type'
+  type: keyword
+  description: The type of event that has occurred.

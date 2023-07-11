@@ -1,0 +1,37 @@
+---
+description: This is the pipeline for the Elasti-daddy project.
+processors:
+- csv:
+    field: message
+    target_fields: ["Medicine", "Start_Time", "End_Time", "Duration", "Side", "Type", "Count", "Amount"]
+    ignore_missing: true
+    trim: true
+- date:
+    field: Start_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: '@timestamp'
+    timezone: 'America/Chicago'
+- date:
+    field: End_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: 'End_Time'
+    timezone: 'America/Chicago'
+- date:
+    field: Start_Time
+    formats: ["M/d/yyyy H:mm"]
+    target_field: 'Start_Time'
+    timezone: 'America/Chicago'
+- convert:
+    field: Amount
+    type: long
+    ignore_missing: true
+- split:
+    field: Medicine
+    separator: ','
+    ignore_missing: true
+- remove:
+    field: message
+on_failure:
+- set:
+    field: error.message
+    value: '{{ _ingest.on_failure_message }}'
