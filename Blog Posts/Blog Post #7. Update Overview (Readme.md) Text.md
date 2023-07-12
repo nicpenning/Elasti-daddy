@@ -229,11 +229,13 @@ Error: one or more test cases failed
 Interesting! So when we ran our test with the sample data I provided, it appears that some additional fields got added during the ingestion 
 of our data. You can see the following fields have not been accounted for in any of the .yml files in the fields directory because that are "undefined":
 
+```
 [0] field "container.id" is undefined
 [1] field "ecs.version" is undefined
 [2] field "input.type" is undefined
 [3] field "log.file.path" is undefined
 [4] field "log.offset" is undefined
+```
 
 To correct this, let us add these to our current fields .yml files. The fields that were added somewhere along the way appear to be a part of the
 Elastic Common Schema (ECS). This is a common schema for field mappings and their respective definitions.You can learn more about ECS [here](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html). Since these are ECS fields, there is a special ecs.yml file we need to create
