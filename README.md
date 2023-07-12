@@ -49,7 +49,7 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 - [x] [Gaining a basic understanding of Elastic Integrations](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%234.%20Gaining%20a%20basic%20understanding%20of%20Elastic%20Integrations.md)
 - [x] [Creating a new custom integration (package)](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%235.%20Creating%20a%20new%20custom%20integration%20(package).md#creating-a-new-custom-integration-package)
 - [x] [Testing the integration with the dataset](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%236.%20Testing%20the%20integration%20with%20the%20dataset.md#testing-the-integration-with-the-datasetmd)
-- [ ] Update Overview (Readme.md) Text
+- [ ] [Update Overview (README.md) Text](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%237.%20Update%20Overview%20(Readme.md)%20Text.md)
 - [ ] Adding the Dashboard to the Integration
 - [ ] Customize Integration Images
 - [ ] Final words
