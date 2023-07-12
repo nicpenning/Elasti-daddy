@@ -55,8 +55,50 @@ Keep in mind that the documentation uses markdown language. You can follow the d
 The current README.md that exists was automatically genereated when we created the integration. We will create some new files and directories to generate
 a new README.md file.
 
-To be continued...
-  
+What we want in the end is a `README.md` template that has most of the text that we want dispalyed on the Overview page but also have the ability to show
+a sample event in JSON and also the fields available for the integration. Fortunately, the `elastic-package build` mechanism will generate the sample event
+and the fields when specific reference text exists inside of the README.md template.
+
+To do this, we need to create a new directory with a new README.md file in the root of the elasti-daddy Integration called `_dev/build/docs`:
+
+```
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ mkdir _dev/build/docs
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ cd _dev/build/docs
+```
+
+Then let's create our new `README.md` and use the text below (after the `nano README.md` command to create the file):
+
+```
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/_dev/build/docs$ nano README.md
+# Elasti-daddy
+
+This integration was developed as a project for preparing and analyzing motherhood and fatherhood data for taking care of a baby. The aim is to learn how Elastic Integrations are developed and deployed. Sample data includes breastfeeding, bottle feeding (milk or formula), milk extraction, etc..
+
+## Data streams
+
+The Elasti-daddy integration collects one type of data streams: logs.
+
+## Requirements
+
+You need any of the `Feed Me.csv` files found at the Elasti-daddy project site [here](https://github.com/nicpenning/Elasti-daddy/tree/main/Data)
+
+## History
+
+For all the details on the project, please visit the [Elasti-daddy project page](https://github.com/nicpenning/Elasti-daddy).
+For step-by-step instructions on how to set up an integration, see the
+
+#### Example
+
+An example event for `{data stream name}` looks as following:
+
+<--event "feed_me"-->
+
+#### Exported fields
+
+{{fields "feed_me"}}
+
+```
+
 </details>
 
 #### 2. Build and Deploy
