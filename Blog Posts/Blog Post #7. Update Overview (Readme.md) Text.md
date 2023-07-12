@@ -319,3 +319,202 @@ Success! Now that our build is passing, we can move on to build the integration 
 </details>
 
 #### 3. Build and Deploy
+<details>
+
+We will build our integration like we have before so that we can go ahead and get it deployed into our stack.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/11 23:16:31  INFO New version is available - v0.84.0. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.84.0
+Build the package
+Error: updating files failed: updating readme file README.md failed: rendering Readme failed: executing template failed: template: README.md:26:2: executing "README.md" at <fields "feed_me">: error calling fields: collecting fields files failed: visiting fields failed: can't import field: importing external field "container.id": external fields not allowed because dependencies file "_dev/build/build.yml" is missing
+```
+
+Looks like we have an error due to using the newly created external fields. The error leads us to believe that we need a `_dev/build/build.yml` file that will
+contain some dependencies. 
+
+To correct this, I figured out that the following text is needed inside of the `build.yml` file:
+
+```
+dependencies:
+  ecs:
+    reference: git@v8.0.0
+```
+
+So let us go ahead and create that file with that text:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ nano _dev/build/build.yml
+```
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7c4e4502-28cd-4579-b925-bc44622797e2)
+
+Now let us try and build again:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/12 01:19:25  INFO New version is available - v0.84.0. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.84.0
+Build the package
+Error: updating files failed: updating readme file README.md failed: rendering Readme failed: executing template failed: template: README.md:26:2: executing "README.md" at <fields "feed_me">: error calling fields: collecting fields files failed: visiting fields failed: can't import field: field definition not found in schema (name: input.type)
+```
+
+We have a new error stating that one of our fields is not valid. Looking back, I made the mistake thinking that `input.type` was an ECS field, but it was not.
+So since it is not, we cannot place that field in the ecs.yml but instead will need find a different place to house that field. 
+
+After looking for where this field type is used in another [official integration](https://github.com/elastic/integrations/blob/main/packages/windows/data_stream/powershell/fields/beats.yml), I found that it could live in the `beats.yml` file. So we will create that file and populate it with this `input.type` field. 
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ nano data_stream/feed_me/beats.yml
+```
+
+```
+- name: input.type
+  type: keyword
+  description: Type of Filebeat input.
+```
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/99067b9f-64b1-427e-bfa2-48e0ac525a71)
+
+We also need to remove that `input.type` field from the current `data_stream/feed_me/ecs.yml`. Which will look like this:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ nano data_stream/feed_me/fields/ecs.yml
+```
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/7e47068f-60b6-4a35-935b-8d2af4750a91)
+
+Let us try our build again:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/12 01:31:22  INFO New version is available - v0.84.0. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.84.0
+Build the package
+Error: updating files failed: updating readme file README.md failed: rendering Readme failed: executing template failed: template: README.md:26:2: executing "README.md" at <fields "feed_me">: error calling fields: collecting fields files failed: visiting fields failed: can't import field: field definition not found in schema (name: log.offset)
+```
+
+Now it turns out `log.offset` is not a valid ECS field either. I could not find a good example where this is being used in other integrations as a sample event
+so I will instead remove it from the `ecs.yml` and from our sample event.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ nano data_stream/feed_me/fields/ecs.yml
+```
+
+```
+- external: ecs
+  name: container.id
+- external: ecs
+  name: ecs.version
+- external: ecs
+  name: log.file.path
+```
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ nano data_stream/feed_me/sample_event.json
+```
+
+```
+{
+  "container": {
+    "id": "Data"
+  },
+  "agent": {
+    "name": "el33t-b00k-1",
+    "id": "362d573c-5198-42b0-b5e3-5eea158373d3",
+    "type": "filebeat",
+    "ephemeral_id": "fc552cf0-f45d-4728-879e-98c2254c6add",
+    "version": "8.8.1"
+  },
+  "log": {
+    "file": {
+      "path": "/home/napsta/GitHub/Elasti-daddy/Data/Feed Me 7 Weeks.csv"
+    }
+  },
+  "elastic_agent": {
+    "id": "362d573c-5198-42b0-b5e3-5eea158373d3",
+    "version": "8.8.1",
+    "snapshot": false
+  },
+  "Duration": 18,
+  "Side": "Left",
+  "input": {
+    "type": "log"
+  },
+  "Type": "Breastfeeding",
+  "@timestamp": "2023-07-10T19:20:00.000-05:00",
+  "ecs": {
+    "version": "8.0.0"
+  },
+  "End_Time": "2023-07-10T19:35:00.000-05:00",
+  "Start_Time": "2023-07-10T19:20:00.000-05:00",
+  "data_stream": {
+    "namespace": "default",
+    "type": "logs",
+    "dataset": "elasti_daddy.feed_me"
+  },
+  "host": {
+    "hostname": "el33t-b00k-1",
+    "os": {
+      "kernel": "5.10.102.1-microsoft-standard-WSL2",
+      "codename": "jammy",
+      "name": "Ubuntu",
+      "type": "linux",
+      "family": "debian",
+      "version": "22.04.2 LTS (Jammy Jellyfish)",
+      "platform": "ubuntu"
+    },
+    "containerized": false,
+    "ip": [
+      "172.31.99.180"
+    ],
+    "name": "el33t-b00k-1",
+    "mac": [
+      "00-15-5D-65-A9-94"
+    ],
+    "architecture": "x86_64"
+  },
+  "event": {
+    "agent_id_status": "verified",
+    "ingested": "2023-07-10T22:07:47Z",
+    "timezone": "-05:00",
+    "dataset": "elasti_daddy.feed_me"
+  }
+}
+```
+
+Okay, now that we have taken care of that quirk. Let us build and see where we are at:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package build
+2023/07/12 01:41:03  INFO New version is available - v0.84.0. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.84.0
+Build the package
+README.md file rendered: /home/napsta/GitHub/Elasti-daddy/Integration/elasti_daddy/docs/README.md
+Error: building package failed: invalid content found in built zip package: found 1 validation error:
+   1. item [beats.yml] is not allowed in folder [/home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip/data_stream/feed_me]
+```
+
+Apparently I made the mistake of putting the `beats.yml` in the wrong directory so let us move it to the fields directory and try again.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ cd data_stream/feed_me/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me$ ls
+agent  beats.yml  elasticsearch  fields  manifest.yml  sample_event.json
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me$ mv beats.yml fields/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/data_stream/feed_me$ elastic-package build
+2023/07/12 01:46:08  INFO New version is available - v0.84.0. Download from: https://github.com/elastic/elastic-package/releases/tag/v0.84.0
+Build the package
+README.md file rendered: /home/napsta/GitHub/Elasti-daddy/Integration/elasti_daddy/docs/README.md
+Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+```
+
+Success! Now we can recycle our package repository and see if our changes took in Kibana.
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package stack up -v -d --services package-registry
+...snipped for brevity...
+Done
+```
+
+
+
+</details>
