@@ -1,5 +1,4 @@
 # Blog Post #7.
-# 🚧 Under Construction 🏗️
 ## Update Overview (README.md) Text
 
 The main page of the Elasti-daddy Integration is still using the sample text that we want to update and make more accurate. This blog post outlines
@@ -92,11 +91,7 @@ For step-by-step instructions on how to set up an integration, see the
 
 #### Example
 
-An example event for `{data stream name}` looks as following:
-
 {{event "feed_me"}}
-
-#### Exported fields
 
 {{fields "feed_me"}}
 ```
@@ -515,6 +510,12 @@ napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-pack
 Done
 ```
 
+🎉 It worked! We now have an updated and good looking Overview for the Integration that includes a sample event and the fields used for it.
 
+https://github.com/nicpenning/Elasti-daddy/assets/5582679/39d00672-50d0-45ae-b88e-514ada7012bb
 
 </details>
+
+In summary, we were able to generate a README.md file that ultimately servers as the Overview text in the integration.
+
+This concludes the blog post on properly updating the Overview for our integration.
