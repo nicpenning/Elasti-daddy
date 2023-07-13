@@ -117,7 +117,6 @@ If all is successful, then you should be able to test our docker installation by
 
 ```
 sudo docker run hello-world
-sudo service docker start
 ```
 
 Then you should see this output if it worked:
