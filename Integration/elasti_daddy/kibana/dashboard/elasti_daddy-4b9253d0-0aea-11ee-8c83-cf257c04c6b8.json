@@ -1,0 +1,1540 @@
+{
+    "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "query": {
+                    "language": "kuery",
+                    "query": ""
+                }
+            }
+        },
+        "optionsJSON": {
+            "hidePanelTitles": false,
+            "syncColors": true,
+            "syncCursor": true,
+            "syncTooltips": false,
+            "useMargins": true
+        },
+        "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-fff8e734-7539-4fcd-8bb5-036bed92dde7",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-603f4000-27e9-4826-a52b-4b1176e91f3c",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "603f4000-27e9-4826-a52b-4b1176e91f3c": {
+                                            "columnOrder": [
+                                                "14d6d60f-1cfe-48c3-ba01-45cc438d3bd7",
+                                                "b2a28bf6-7ded-4209-b777-162b3a839927"
+                                            ],
+                                            "columns": {
+                                                "14d6d60f-1cfe-48c3-ba01-45cc438d3bd7": {
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "@timestamp",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "auto"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "b2a28bf6-7ded-4209-b777-162b3a839927": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "linkToLayers": [
+                                                "fff8e734-7539-4fcd-8bb5-036bed92dde7"
+                                            ],
+                                            "sampling": 1
+                                        },
+                                        "fff8e734-7539-4fcd-8bb5-036bed92dde7": {
+                                            "columnOrder": [
+                                                "4a7bab84-4596-4e6b-8bb1-dda01f4088ef"
+                                            ],
+                                            "columns": {
+                                                "4a7bab84-4596-4e6b-8bb1-dda01f4088ef": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layerId": "fff8e734-7539-4fcd-8bb5-036bed92dde7",
+                                "layerType": "data",
+                                "metricAccessor": "4a7bab84-4596-4e6b-8bb1-dda01f4088ef",
+                                "showBar": false,
+                                "trendlineLayerId": "603f4000-27e9-4826-a52b-4b1176e91f3c",
+                                "trendlineLayerType": "metricTrendline",
+                                "trendlineMetricAccessor": "b2a28bf6-7ded-4209-b777-162b3a839927",
+                                "trendlineTimeAccessor": "14d6d60f-1cfe-48c3-ba01-45cc438d3bd7"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 4,
+                    "i": "da16a787-a59e-4de3-b62a-139ab6c3f80c",
+                    "w": 13,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "da16a787-a59e-4de3-b62a-139ab6c3f80c",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f8a0d80a-7068-4a2d-86dc-c97d4f941a81": {
+                                            "columnOrder": [
+                                                "043b79f5-8e85-48ad-a160-197ff63f4fb0",
+                                                "09d2ddd3-904f-4553-96a8-58516945a391"
+                                            ],
+                                            "columns": {
+                                                "043b79f5-8e85-48ad-a160-197ff63f4fb0": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "Type :\"Milk Extraction\" "
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Amount of Milk Extracted",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Amount"
+                                                },
+                                                "09d2ddd3-904f-4553-96a8-58516945a391": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": "Type : (\"Pumped Milk Feed\" or \"Pumped Milk Fed\")"
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Amount of Milk Fed in ml/cc (Black Bar)",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Amount"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "colorMode": "palette",
+                                "goalAccessor": "043b79f5-8e85-48ad-a160-197ff63f4fb0",
+                                "labelMajorMode": "auto",
+                                "labelMinor": "Amount of Milk Extracted (Black Line)",
+                                "layerId": "f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+                                "layerType": "data",
+                                "metricAccessor": "09d2ddd3-904f-4553-96a8-58516945a391",
+                                "palette": {
+                                    "name": "positive",
+                                    "params": {
+                                        "continuity": "above",
+                                        "maxSteps": 5,
+                                        "name": "positive",
+                                        "progression": "fixed",
+                                        "rangeMax": null,
+                                        "rangeMin": 0,
+                                        "rangeType": "percent",
+                                        "reverse": false,
+                                        "steps": 3,
+                                        "stops": [
+                                            {
+                                                "color": "#BBDAD380",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#77B6A880",
+                                                "stop": 33.33
+                                            },
+                                            {
+                                                "color": "#20928080",
+                                                "stop": 66.66
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "shape": "horizontalBullet",
+                                "ticksPosition": "bands"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsGauge"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 6,
+                    "i": "9cae0216-d6ca-4d0a-9fc7-d2d3ef006eb6",
+                    "w": 35,
+                    "x": 13,
+                    "y": 0
+                },
+                "panelIndex": "9cae0216-d6ca-4d0a-9fc7-d2d3ef006eb6",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f0e2c807-b453-43b6-8b2e-bf1c86725b78": {
+                                            "columnOrder": [
+                                                "9a6ce670-98a6-4fa1-ae1f-a7a62604945e",
+                                                "696f4c0d-d7aa-4d36-854e-227d998636e2",
+                                                "b4e4b0de-a461-4df0-a585-f13b50e191e2"
+                                            ],
+                                            "columns": {
+                                                "696f4c0d-d7aa-4d36-854e-227d998636e2": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 3 values of Type",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "b4e4b0de-a461-4df0-a585-f13b50e191e2",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 3
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Type"
+                                                },
+                                                "9a6ce670-98a6-4fa1-ae1f-a7a62604945e": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 5 values of Side",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "b4e4b0de-a461-4df0-a585-f13b50e191e2",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Side"
+                                                },
+                                                "b4e4b0de-a461-4df0-a585-f13b50e191e2": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "emptySizeRatio": 0.3,
+                                        "layerId": "f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+                                        "layerType": "data",
+                                        "legendDisplay": "hide",
+                                        "legendPosition": "right",
+                                        "metrics": [
+                                            "b4e4b0de-a461-4df0-a585-f13b50e191e2"
+                                        ],
+                                        "nestedLegend": false,
+                                        "numberDisplay": "value",
+                                        "percentDecimals": 1,
+                                        "primaryGroups": [
+                                            "9a6ce670-98a6-4fa1-ae1f-a7a62604945e",
+                                            "696f4c0d-d7aa-4d36-854e-227d998636e2"
+                                        ],
+                                        "truncateLegend": false
+                                    }
+                                ],
+                                "palette": {
+                                    "name": "default",
+                                    "type": "palette"
+                                },
+                                "shape": "donut"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 18,
+                    "i": "2b0eb505-a20e-4390-86c3-ad6c6b775989",
+                    "w": 13,
+                    "x": 0,
+                    "y": 4
+                },
+                "panelIndex": "2b0eb505-a20e-4390-86c3-ad6c6b775989",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f036317d-eb0d-49d2-88f6-8ba3ba063047",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f036317d-eb0d-49d2-88f6-8ba3ba063047": {
+                                            "columnOrder": [
+                                                "6246c610-347f-415d-981c-ca7fa45711dc",
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477"
+                                            ],
+                                            "columns": {
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477": {
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": ""
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Average of Duration",
+                                                    "operationType": "average",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Duration"
+                                                },
+                                                "6246c610-347f-415d-981c-ca7fa45711dc": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 6 values of Type",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "4d974239-c4b1-4eeb-b43b-9d1ecbc58477",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 6
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Type"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "breakdownByAccessor": "6246c610-347f-415d-981c-ca7fa45711dc",
+                                "icon": "empty",
+                                "layerId": "f036317d-eb0d-49d2-88f6-8ba3ba063047",
+                                "layerType": "data",
+                                "metricAccessor": "4d974239-c4b1-4eeb-b43b-9d1ecbc58477",
+                                "palette": {
+                                    "name": "positive",
+                                    "params": {
+                                        "continuity": "above",
+                                        "maxSteps": 5,
+                                        "name": "positive",
+                                        "progression": "fixed",
+                                        "rangeMax": null,
+                                        "rangeMin": 0,
+                                        "rangeType": "percent",
+                                        "reverse": false,
+                                        "steps": 3,
+                                        "stops": [
+                                            {
+                                                "color": "#bbdad3",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#77b6a8",
+                                                "stop": 33.33
+                                            },
+                                            {
+                                                "color": "#209280",
+                                                "stop": 66.66
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "showBar": false
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 13,
+                    "i": "0d06b051-e5d4-47bb-871c-bfe1b0b7e854",
+                    "w": 15,
+                    "x": 13,
+                    "y": 6
+                },
+                "panelIndex": "0d06b051-e5d4-47bb-871c-bfe1b0b7e854",
+                "title": "Average Time Spent for each Activity",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f8a0d80a-7068-4a2d-86dc-c97d4f941a81": {
+                                            "columnOrder": [
+                                                "50444c9b-9b92-4078-bfa6-82122a8b7ea4"
+                                            ],
+                                            "columns": {
+                                                "50444c9b-9b92-4078-bfa6-82122a8b7ea4": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Amount Formula Fed",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Amount"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "Type : \"Formula Fed\" "
+                            },
+                            "visualization": {
+                                "colorMode": "palette",
+                                "labelMajorMode": "auto",
+                                "labelMinor": "(ml/cc)",
+                                "layerId": "f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+                                "layerType": "data",
+                                "metricAccessor": "50444c9b-9b92-4078-bfa6-82122a8b7ea4",
+                                "palette": {
+                                    "name": "positive",
+                                    "params": {
+                                        "continuity": "above",
+                                        "maxSteps": 5,
+                                        "name": "positive",
+                                        "progression": "fixed",
+                                        "rangeMax": null,
+                                        "rangeMin": 0,
+                                        "rangeType": "percent",
+                                        "reverse": false,
+                                        "steps": 3,
+                                        "stops": [
+                                            {
+                                                "color": "#BBDAD380",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#77B6A880",
+                                                "stop": 33.33
+                                            },
+                                            {
+                                                "color": "#20928080",
+                                                "stop": 66.66
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "shape": "verticalBullet",
+                                "ticksPosition": "bands"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsGauge"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 13,
+                    "i": "87f43129-f539-4131-8aa0-2f6b62bb6355",
+                    "w": 5,
+                    "x": 28,
+                    "y": 6
+                },
+                "panelIndex": "87f43129-f539-4131-8aa0-2f6b62bb6355",
+                "title": "",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f036317d-eb0d-49d2-88f6-8ba3ba063047",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f036317d-eb0d-49d2-88f6-8ba3ba063047": {
+                                            "columnOrder": [
+                                                "6246c610-347f-415d-981c-ca7fa45711dc",
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477",
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477X0"
+                                            ],
+                                            "columns": {
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Minutes Spent per Day",
+                                                    "operationType": "formula",
+                                                    "params": {
+                                                        "formula": "sum(Duration, kql='')",
+                                                        "isFormulaBroken": false
+                                                    },
+                                                    "references": [
+                                                        "4d974239-c4b1-4eeb-b43b-9d1ecbc58477X0"
+                                                    ],
+                                                    "scale": "ratio",
+                                                    "timeScale": "d"
+                                                },
+                                                "4d974239-c4b1-4eeb-b43b-9d1ecbc58477X0": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "filter": {
+                                                        "language": "kuery",
+                                                        "query": ""
+                                                    },
+                                                    "isBucketed": false,
+                                                    "label": "Part of sum(Duration, kql='')",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": false
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Duration"
+                                                },
+                                                "6246c610-347f-415d-981c-ca7fa45711dc": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 6 values of Type",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderAgg": {
+                                                            "dataType": "number",
+                                                            "isBucketed": false,
+                                                            "label": "Count of records",
+                                                            "operationType": "count",
+                                                            "params": {
+                                                                "emptyAsNull": true
+                                                            },
+                                                            "scale": "ratio",
+                                                            "sourceField": "___records___"
+                                                        },
+                                                        "orderBy": {
+                                                            "type": "custom"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 6
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Type"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "breakdownByAccessor": "6246c610-347f-415d-981c-ca7fa45711dc",
+                                "icon": "empty",
+                                "layerId": "f036317d-eb0d-49d2-88f6-8ba3ba063047",
+                                "layerType": "data",
+                                "metricAccessor": "4d974239-c4b1-4eeb-b43b-9d1ecbc58477",
+                                "palette": {
+                                    "name": "positive",
+                                    "params": {
+                                        "continuity": "above",
+                                        "maxSteps": 5,
+                                        "name": "positive",
+                                        "progression": "fixed",
+                                        "rangeMax": null,
+                                        "rangeMin": 0,
+                                        "rangeType": "percent",
+                                        "reverse": false,
+                                        "steps": 3,
+                                        "stops": [
+                                            {
+                                                "color": "#bbdad3",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#77b6a8",
+                                                "stop": 33.33
+                                            },
+                                            {
+                                                "color": "#209280",
+                                                "stop": 66.66
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "showBar": false
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsMetric"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 13,
+                    "i": "d0ad3578-5c99-464f-8d9f-63a5064e39cf",
+                    "w": 15,
+                    "x": 33,
+                    "y": 6
+                },
+                "panelIndex": "d0ad3578-5c99-464f-8d9f-63a5064e39cf",
+                "title": "Average Time Spent for each Activity per Day",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-a4e6af4c-fea2-4235-ad60-9e31099b72d5",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "a4e6af4c-fea2-4235-ad60-9e31099b72d5": {
+                                            "columnOrder": [
+                                                "23e3b7e5-599c-47bb-915e-66ba58b8dff4",
+                                                "101802df-00fa-4c77-a4f9-c375b42329e2"
+                                            ],
+                                            "columns": {
+                                                "101802df-00fa-4c77-a4f9-c375b42329e2": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "23e3b7e5-599c-47bb-915e-66ba58b8dff4": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 10 values of Medicine",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "101802df-00fa-4c77-a4f9-c375b42329e2",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Medicine"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "layerId": "a4e6af4c-fea2-4235-ad60-9e31099b72d5",
+                                        "layerType": "data",
+                                        "legendDisplay": "hide",
+                                        "legendPosition": "top",
+                                        "metrics": [
+                                            "101802df-00fa-4c77-a4f9-c375b42329e2"
+                                        ],
+                                        "nestedLegend": false,
+                                        "numberDisplay": "value",
+                                        "primaryGroups": [
+                                            "23e3b7e5-599c-47bb-915e-66ba58b8dff4"
+                                        ]
+                                    }
+                                ],
+                                "palette": {
+                                    "name": "default",
+                                    "type": "palette"
+                                },
+                                "shape": "treemap"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 10,
+                    "i": "a2f85431-1907-40af-be19-e04b7b690971",
+                    "w": 13,
+                    "x": 0,
+                    "y": 22
+                },
+                "panelIndex": "a2f85431-1907-40af-be19-e04b7b690971",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "xy-visualization-layer-ce5ac3af-830b-49d7-908a-e73b73c5edaa",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "f0e2c807-b453-43b6-8b2e-bf1c86725b78": {
+                                            "columnOrder": [
+                                                "9a6ce670-98a6-4fa1-ae1f-a7a62604945e",
+                                                "2c85e1d6-749a-463d-8f0e-bb95e9fa0553",
+                                                "b4e4b0de-a461-4df0-a585-f13b50e191e2"
+                                            ],
+                                            "columns": {
+                                                "2c85e1d6-749a-463d-8f0e-bb95e9fa0553": {
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "@timestamp",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "auto"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "9a6ce670-98a6-4fa1-ae1f-a7a62604945e": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 5 values of Side",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "b4e4b0de-a461-4df0-a585-f13b50e191e2",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Side"
+                                                },
+                                                "b4e4b0de-a461-4df0-a585-f13b50e191e2": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Breastfeeding Time",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Duration"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "Type : \"Breastfeeding\" "
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "b4e4b0de-a461-4df0-a585-f13b50e191e2"
+                                        ],
+                                        "layerId": "f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+                                        "layerType": "data",
+                                        "palette": {
+                                            "name": "default",
+                                            "type": "palette"
+                                        },
+                                        "seriesType": "bar_stacked",
+                                        "splitAccessor": "9a6ce670-98a6-4fa1-ae1f-a7a62604945e",
+                                        "xAccessor": "2c85e1d6-749a-463d-8f0e-bb95e9fa0553"
+                                    },
+                                    {
+                                        "annotations": [
+                                            {
+                                                "filter": {
+                                                    "language": "kuery",
+                                                    "query": "Type : \"Bath\" ",
+                                                    "type": "kibana_query"
+                                                },
+                                                "icon": "heart",
+                                                "id": "b90178a6-e9b0-4d65-8fec-67ee7432f8e5",
+                                                "key": {
+                                                    "type": "point_in_time"
+                                                },
+                                                "label": "Bath Time",
+                                                "textVisibility": false,
+                                                "timeField": "@timestamp",
+                                                "type": "query"
+                                            },
+                                            {
+                                                "color": "#6092c0",
+                                                "filter": {
+                                                    "language": "kuery",
+                                                    "query": "Medicine 💊 : (\"Motrin\" or \"Tylenol\")",
+                                                    "type": "kibana_query"
+                                                },
+                                                "icon": "alert",
+                                                "id": "6ad91050-b380-4585-8425-ce7421988771",
+                                                "key": {
+                                                    "type": "point_in_time"
+                                                },
+                                                "label": "Medicine (Pain Reliver)",
+                                                "timeField": "@timestamp",
+                                                "type": "query"
+                                            }
+                                        ],
+                                        "ignoreGlobalFilters": true,
+                                        "layerId": "ce5ac3af-830b-49d7-908a-e73b73c5edaa",
+                                        "layerType": "annotations",
+                                        "persistanceType": "byValue"
+                                    }
+                                ],
+                                "legend": {
+                                    "horizontalAlignment": "left",
+                                    "isInside": true,
+                                    "isVisible": true,
+                                    "position": "right",
+                                    "verticalAlignment": "top"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 9,
+                    "i": "2925fce4-823d-423f-811b-448b702f6f65",
+                    "w": 35,
+                    "x": 13,
+                    "y": 19
+                },
+                "panelIndex": "2925fce4-823d-423f-811b-448b702f6f65",
+                "title": "Time Spent Breastfeeding",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-ddf95613-36f6-4723-ae65-e24a36f0f750",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "ddf95613-36f6-4723-ae65-e24a36f0f750": {
+                                            "columnOrder": [
+                                                "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c",
+                                                "95c054ba-2579-4529-adfb-264d3a8ce755",
+                                                "961f4a88-5161-43f8-8579-6d9c6204bda4"
+                                            ],
+                                            "columns": {
+                                                "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 3 values of Side",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "961f4a88-5161-43f8-8579-6d9c6204bda4",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 3
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Side"
+                                                },
+                                                "95c054ba-2579-4529-adfb-264d3a8ce755": {
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "@timestamp",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "auto"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "961f4a88-5161-43f8-8579-6d9c6204bda4": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Milk Extraction Amounts (ml/cc)",
+                                                    "operationType": "sum",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Amount"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "961f4a88-5161-43f8-8579-6d9c6204bda4"
+                                        ],
+                                        "layerId": "ddf95613-36f6-4723-ae65-e24a36f0f750",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_stacked",
+                                        "showGridlines": false,
+                                        "splitAccessor": "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c",
+                                        "xAccessor": "95c054ba-2579-4529-adfb-264d3a8ce755"
+                                    }
+                                ],
+                                "legend": {
+                                    "horizontalAlignment": "left",
+                                    "isInside": true,
+                                    "isVisible": true,
+                                    "position": "top",
+                                    "verticalAlignment": "top"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "show",
+                                "valuesInLegend": false,
+                                "yLeftExtent": {
+                                    "mode": "full"
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 9,
+                    "i": "b62a7e3f-83b0-4dd6-8007-856decf1ffc2",
+                    "w": 35,
+                    "x": 13,
+                    "y": 28
+                },
+                "panelIndex": "b62a7e3f-83b0-4dd6-8007-856decf1ffc2",
+                "title": "Time Spent Milk Extracting",
+                "type": "lens",
+                "version": "8.8.1"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "description": "",
+                        "references": [
+                            {
+                                "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+                                "name": "indexpattern-datasource-layer-ddf95613-36f6-4723-ae65-e24a36f0f750",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "ddf95613-36f6-4723-ae65-e24a36f0f750": {
+                                            "columnOrder": [
+                                                "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c",
+                                                "95c054ba-2579-4529-adfb-264d3a8ce755",
+                                                "961f4a88-5161-43f8-8579-6d9c6204bda4"
+                                            ],
+                                            "columns": {
+                                                "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top 10 values of Medicine",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "accuracyMode": true,
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "961f4a88-5161-43f8-8579-6d9c6204bda4",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "Medicine"
+                                                },
+                                                "95c054ba-2579-4529-adfb-264d3a8ce755": {
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "@timestamp",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "dropPartials": false,
+                                                        "includeEmptyRows": true,
+                                                        "interval": "auto"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "961f4a88-5161-43f8-8579-6d9c6204bda4": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of Medicine",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "Medicine"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "961f4a88-5161-43f8-8579-6d9c6204bda4"
+                                        ],
+                                        "layerId": "ddf95613-36f6-4723-ae65-e24a36f0f750",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_stacked",
+                                        "showGridlines": false,
+                                        "splitAccessor": "5aade2e9-1bb4-4fe7-b70c-b859b9f86a6c",
+                                        "xAccessor": "95c054ba-2579-4529-adfb-264d3a8ce755"
+                                    }
+                                ],
+                                "legend": {
+                                    "horizontalAlignment": "left",
+                                    "isInside": true,
+                                    "isVisible": true,
+                                    "position": "top",
+                                    "verticalAlignment": "top"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "show",
+                                "valuesInLegend": false,
+                                "yLeftExtent": {
+                                    "mode": "full"
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 9,
+                    "i": "2fae032a-cbca-46f1-87bc-f9f077e691b4",
+                    "w": 35,
+                    "x": 13,
+                    "y": 37
+                },
+                "panelIndex": "2fae032a-cbca-46f1-87bc-f9f077e691b4",
+                "title": "Medicine Consumed Over Time",
+                "type": "lens",
+                "version": "8.8.1"
+            }
+        ],
+        "refreshInterval": {
+            "pause": true,
+            "value": 10000
+        },
+        "timeFrom": "2023-05-22T05:00:00.000Z",
+        "timeRestore": true,
+        "timeTo": "2023-07-31T07:21:16.642Z",
+        "title": "Feed Analysis",
+        "version": 1
+    },
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2023-07-10T22:14:05.864Z",
+    "id": "elasti_daddy-4b9253d0-0aea-11ee-8c83-cf257c04c6b8",
+    "managed": false,
+    "references": [
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "da16a787-a59e-4de3-b62a-139ab6c3f80c:indexpattern-datasource-layer-fff8e734-7539-4fcd-8bb5-036bed92dde7",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "da16a787-a59e-4de3-b62a-139ab6c3f80c:indexpattern-datasource-layer-603f4000-27e9-4826-a52b-4b1176e91f3c",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "9cae0216-d6ca-4d0a-9fc7-d2d3ef006eb6:indexpattern-datasource-layer-f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "2b0eb505-a20e-4390-86c3-ad6c6b775989:indexpattern-datasource-layer-f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "0d06b051-e5d4-47bb-871c-bfe1b0b7e854:indexpattern-datasource-layer-f036317d-eb0d-49d2-88f6-8ba3ba063047",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "87f43129-f539-4131-8aa0-2f6b62bb6355:indexpattern-datasource-layer-f8a0d80a-7068-4a2d-86dc-c97d4f941a81",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "d0ad3578-5c99-464f-8d9f-63a5064e39cf:indexpattern-datasource-layer-f036317d-eb0d-49d2-88f6-8ba3ba063047",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "a2f85431-1907-40af-be19-e04b7b690971:indexpattern-datasource-layer-a4e6af4c-fea2-4235-ad60-9e31099b72d5",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "2925fce4-823d-423f-811b-448b702f6f65:indexpattern-datasource-layer-f0e2c807-b453-43b6-8b2e-bf1c86725b78",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "2925fce4-823d-423f-811b-448b702f6f65:xy-visualization-layer-ce5ac3af-830b-49d7-908a-e73b73c5edaa",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "b62a7e3f-83b0-4dd6-8007-856decf1ffc2:indexpattern-datasource-layer-ddf95613-36f6-4723-ae65-e24a36f0f750",
+            "type": "index-pattern"
+        },
+        {
+            "id": "d6f736c6-5475-428d-8b28-76403f4b6280",
+            "name": "2fae032a-cbca-46f1-87bc-f9f077e691b4:indexpattern-datasource-layer-ddf95613-36f6-4723-ae65-e24a36f0f750",
+            "type": "index-pattern"
+        }
+    ],
+    "type": "dashboard",
+    "typeMigrationVersion": "8.7.0"
+}
