@@ -88,6 +88,20 @@ Export Kibana dashboards
 Done
 ```
 
+When this command is executed, the tool will export the dashbaord as a `JSON` file in a new `kibana\dashboard` directory that was created:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ ls
+LICENSE.txt  _dev  changelog.yml  data_stream  docs  img  kibana  manifest.yml
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ cd kibana/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana$ ls
+dashboard
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana$ cd dashboard/
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana/dashboard$ ls
+elasti_daddy-4b9253d0-0aea-11ee-8c83-cf257c04c6b8.json
+```
+
+Now we can move on to build and deploy the package to see if the dashboard is now included in the integration.
 
 </details>
 
