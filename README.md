@@ -50,6 +50,6 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 - [x] [Creating a new custom integration (package)](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%235.%20Creating%20a%20new%20custom%20integration%20(package).md#creating-a-new-custom-integration-package)
 - [x] [Testing the integration with the dataset](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%236.%20Testing%20the%20integration%20with%20the%20dataset.md#testing-the-integration-with-the-datasetmd)
 - [x] [Update Overview (README.md) Text](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%237.%20Update%20Overview%20(Readme.md)%20Text.md)
-- [ ] Adding the Dashboard to the Integration
+- [ ] [Adding the Dashboard to the Integration](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%238.%20Adding%20the%20Dashboard%20to%20the%20Integration.md#adding-the-dashboard-to-the-integration)
 - [ ] Customize Integration Images
 - [ ] Final words
