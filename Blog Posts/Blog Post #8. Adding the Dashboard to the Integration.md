@@ -134,6 +134,10 @@ Take notice that when we go to install, it shows 2 assets (This is likely the in
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/15ee17b4-0fa9-4db8-9945-7f3f157d762d)
 
+It appears that we had an error trying to install, but confusingly enough, it shows that the integration is installed:
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/08dd811e-08a9-4d2c-87f3-51df2bb55665)
+
 
 
 </details>
