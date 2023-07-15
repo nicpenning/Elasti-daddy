@@ -109,5 +109,18 @@ Now we can move on to build and deploy the package to see if the dashboard is no
 #### 3. Build, Deploy and Triumph
 <details>
 
+Finally, let us build and deploy the integration to see if the Dashboard will show up as an asset in Kibana:
+
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana/dashboard$ elastic-package build
+Build the package
+README.md file rendered: /home/napsta/GitHub/Elasti-daddy/Integration/elasti_daddy/docs/README.md
+Package built: /home/napsta/GitHub/Elasti-daddy/build/packages/elasti_daddy-0.0.1.zip
+Done
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana/dashboard$ elastic-package stack up -v -d --services package-registry
+...sniped for brevity...
+
+```
+
 </details>
 
