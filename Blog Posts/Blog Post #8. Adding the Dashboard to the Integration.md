@@ -122,5 +122,19 @@ napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy/kibana/dashbo
 
 ```
 
+Excellent! It appears that our dashboard is showing up in the integration now!
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/92a992ca-2c4e-4186-b7f3-5f522c7c3ff1)
+
+The final check is to make sure that the integration actually works. 
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/66246134-aa1f-417b-be34-e2d365fdde94)
+
+Take notice that when we go to install, it shows 2 assets (This is likely the ingest pipeine and our new dashboard we bundled with the integration).
+
+![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/15ee17b4-0fa9-4db8-9945-7f3f157d762d)
+
+
+
 </details>
 
