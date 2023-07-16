@@ -65,7 +65,7 @@ Export Kibana dashboards
   [ ]  [System Windows Security] User Logons (ID: system-bae11b00-9bfc-11ea-87e4-49f31ec44891)
   [ ]  [System Windows Security] User Management Events (ID: system-71f720f0-ff18-11e9-8405-516218e3d268)
   [ ]  [System] Windows Overview (ID: system-Windows-Dashboard)
-  [ ]  Feed Analysis (ID: 4b9253d0-0aea-11ee-8c83-cf257c04c6b8)
+  [x]  Feed Analysis (ID: 4b9253d0-0aea-11ee-8c83-cf257c04c6b8)
 ```
 
 Now we are presented with a list of dashboards found in Kibana for export. Use the arrow keys to select the `Feed Analysis` dashboard
@@ -195,7 +195,9 @@ elastic-package v0.84.0 version-hash 103eb96 (build time: 2023-07-12T08:51:24-05
 
 Turns out there is a current [issue](https://github.com/elastic/elastic-package/issues/1354) in the tool when using `8.8.0+` version of the Elastic stack.
 
+Since we cannot properly export and bundle our dashboard in 8.8.0, I will have to wait until a fix exists in the `elastic-package` tool. I tried to use the `7.7.1` version of the stack but the dashboards were created in 8.8.0 and can't easily be downgraded so that is why we need to wait for a fix.
 
+To be continued. We can track the progress on the issue mentioned above.
 
 </details>
 
