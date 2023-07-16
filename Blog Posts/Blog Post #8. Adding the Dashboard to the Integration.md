@@ -138,7 +138,31 @@ It appears that we had an error trying to install, but confusingly enough, it sh
 
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/08dd811e-08a9-4d2c-87f3-51df2bb55665)
 
+We will go back to our terminal and run the `elastic-package test` command to see if there are any errors:
 
+```bash
+napsta@el33t-b00k-1:~/GitHub/Elasti-daddy/Integration/elasti_daddy$ elastic-package test
+Run test suite for the package
+Run static tests for the package
+--- Test results for package: elasti_daddy - START ---
+╭──────────────┬─────────────┬───────────┬──────────────────────────┬────────┬──────────────╮
+│ PACKAGE      │ DATA STREAM │ TEST TYPE │ TEST NAME                │ RESULT │ TIME ELAPSED │
+├──────────────┼─────────────┼───────────┼──────────────────────────┼────────┼──────────────┤
+│ elasti_daddy │ feed_me     │ static    │ Verify sample_event.json │ PASS   │  96.729142ms │
+╰──────────────┴─────────────┴───────────┴──────────────────────────┴────────┴──────────────╯
+--- Test results for package: elasti_daddy - END   ---
+Done
+Run system tests for the package
+--- Test results for package: elasti_daddy - START ---
+No test results
+--- Test results for package: elasti_daddy - END   ---
+Done
+Run asset tests for the package
+Error: error running package asset tests: could not complete test run: can't install the package: can't install the package: could not zip-install package; API status code = 500; response body = {"statusCode":500,"error":"Internal Server Error","message":"Migration function for version 7.13.1 threw an error"}
+```
+
+So it appears that there is an issue with our dashboard that has something to do with `Migration function for version 7.13.1 threw an error`. It is
+possible that there is something in our dashboard causing this issue.
 
 </details>
 
