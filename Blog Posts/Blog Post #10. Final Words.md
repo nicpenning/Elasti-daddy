@@ -24,11 +24,12 @@ will coincide with creating pull requests to the official `Elastic Integrations`
 all users of Elastic.
 
 All in all, this will be a good reference for myself and any others that need some guidance on how to tackle any of these specific
-tasks throughout the series.
+tasks throughout the series. I hope others find inspiration in creating their own integrations or even simply making current integrations better for all.
 
-🙏 I hope others find inspiration in creating their own integrations or even simply making current integrations better for all.
+Lastly, I have gained a deeper appreciation for all mothers and fathers raising children as it is a very challenging endeavor
+that requires a self sacrificial love for their children and each other. 
 
-I will leave you with these final words:
+🙏 I will now leave you with these final words:
 
 ```
 All your children shall be taught by the Lord,
