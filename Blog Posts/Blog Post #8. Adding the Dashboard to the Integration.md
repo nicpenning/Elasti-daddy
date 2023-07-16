@@ -164,5 +164,38 @@ Error: error running package asset tests: could not complete test run: can't ins
 So it appears that there is an issue with our dashboard that has something to do with `Migration function for version 7.13.1 threw an error`. It is
 possible that there is something in our dashboard causing this issue.
 
+To make sure it wasn't an issue with the `elastic-package` tool. I went ahead and did an upgrade to the latest verision, however, that did not
+resolve the problem.
+
+```bash
+napsta@el33t-b00k-1:~$ wget https://github.com/elastic/elastic-package/releases/download/v0.84.0/elastic-package_0.84.0_linux_amd64.tar.gz
+--2023-07-15 22:03:39--  https://github.com/elastic/elastic-package/releases/download/v0.84.0/elastic-package_0.84.0_linux_amd64.tar.gz
+Resolving github.com (github.com)... 140.82.113.3
+Connecting to github.com (github.com)|140.82.113.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/269612753/59ece508-1b44-496c-a595-a29e1acdacd9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230716%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230716T104445Z&X-Amz-Expires=300&X-Amz-Signature=e03a682458fc62f2ab0bfe4c5373b38e269a5c3ee302513a7a4791940c24c138&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=269612753&response-content-disposition=attachment%3B%20filename%3Delastic-package_0.84.0_linux_amd64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-07-15 22:03:40--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/269612753/59ece508-1b44-496c-a595-a29e1acdacd9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230716%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230716T104445Z&X-Amz-Expires=300&X-Amz-Signature=e03a682458fc62f2ab0bfe4c5373b38e269a5c3ee302513a7a4791940c24c138&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=269612753&response-content-disposition=attachment%3B%20filename%3Delastic-package_0.84.0_linux_amd64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 45065222 (43M) [application/octet-stream]
+Saving to: ‘elastic-package_0.84.0_linux_amd64.tar.gz’
+
+elastic-package_0.84.0_linux_amd64 100%[================================================================>]  42.98M  18.0MB/s    in 2.4s
+
+2023-07-15 22:03:43 (18.0 MB/s) - ‘elastic-package_0.84.0_linux_amd64.tar.gz’ saved [45065222/45065222]
+
+napsta@el33t-b00k-1:~$ mkdir ~/ep
+tar -xf elastic-package_*.*.*_linux_amd64.tar.gz -C ~/ep
+napsta@el33t-b00k-1:~$ elastic-package --version
+Error: unknown flag: --version
+napsta@el33t-b00k-1:~$ elastic-package version
+elastic-package v0.84.0 version-hash 103eb96 (build time: 2023-07-12T08:51:24-05:00)
+```
+
+Turns out there is a current [issue](https://github.com/elastic/elastic-package/issues/1354) in the tool when using `8.8.0+` version of the Elastic stack.
+
+
+
 </details>
 
