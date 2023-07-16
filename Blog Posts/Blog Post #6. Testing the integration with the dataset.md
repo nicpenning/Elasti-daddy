@@ -18,7 +18,8 @@ We will install the Elastic Agent before adding our policy that includes our Int
 a few changes to the Fleet server to ensure that our Ubuntu on Windows can communicate with the Elastic Stack that was stood up by
 the `elastic-package` tool. 
 
-⚠️ Note: As I was going through this blog, I found out my date was over a day off. You can check the date of your Ubuntu on Windows by running `date` and reviewing the output. If it is incorrect, please execute `sudo hwclock -s` in your terminal to correct this.
+⚠️ Note: As I was going through this blog, I found out my date was over a day off. You can check the date of your Ubuntu on Windows 
+by running `date` and reviewing the output. If it is incorrect, please execute `sudo hwclock -s` in your terminal to correct this.
 
 We need to adjust the profile of the `elastic-package` tool to have Elasticsearch listen on 127.0.0.1:9200. To do this, I modified my profile here:
 
