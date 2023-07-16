@@ -52,4 +52,4 @@ I am excited to turn my hand written notes into useful visualizations to see wha
 - [x] [Update Overview (README.md) Text](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%237.%20Update%20Overview%20(Readme.md)%20Text.md)
 - [ ] [Adding the Dashboard to the Integration](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%238.%20Adding%20the%20Dashboard%20to%20the%20Integration.md#adding-the-dashboard-to-the-integration)
 - [x] [Customize Integration Images](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%239.%20Customize%20Integration%20Images.md#customize-integration-images)
-- [ ] Final words
+- [x] [Final words](https://github.com/nicpenning/Elasti-daddy/blob/main/Blog%20Posts/Blog%20Post%20%2310.%20Final%20Words.md#final-words)
