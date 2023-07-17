@@ -1,5 +1,4 @@
 # Blog Post #8.
-# 🚧 Under Construction 🏗️
 ## Adding the Dashboard to the Integration
 
 The last part of our integration is including the dashboard that has been created for this project. This will require us to export the
@@ -197,7 +196,16 @@ Turns out there is a current [issue](https://github.com/elastic/elastic-package/
 
 Since we cannot properly export and bundle our dashboard in 8.8.0, I will have to wait until a fix exists in the `elastic-package` tool. I tried to use the `7.7.1` version of the stack but the dashboards were created in 8.8.0 and can't easily be downgraded so that is why we need to wait for a fix.
 
-To be continued. We can track the progress on the issue mentioned above.
+We can track the progress on the issue mentioned above.
+
+... a few days later...
+
+I see there is a bigger issue than I anticipated and the current work around is preventing the export of dashboards from versions 8.8.0 and 8.9.0. So that means I need to rebuild the dashboard from scracth in version 8.7.1.
+
+That will take a fair amount of time, so I will spare those details here and complete this blog post. If you really want to see the completion of this post, please create an Issue on this project addressing it, and I will happily do it! I firmly believe everything will work as long as the dashboard lives in the `kibana` directory as we worked through this post.
 
 </details>
 
+In summary, we were able to demonstrate the ability to export a dashboard that is in our Kibana instance that *should* be bundled with the integration.
+
+This concludes the blog post on adding a dashboard to our integration.
