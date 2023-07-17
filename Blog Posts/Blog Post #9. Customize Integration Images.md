@@ -116,3 +116,7 @@ Done
 ![image](https://github.com/nicpenning/Elasti-daddy/assets/5582679/75d20a18-6372-4d62-bc93-fef55c30b9e5)
  
 </details>
+
+In summary, we were able to update the images and icons for this integration.
+
+This concludes and proves that we are able to tweak the default images and icons for a custom integration.
