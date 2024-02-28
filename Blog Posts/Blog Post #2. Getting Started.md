@@ -214,7 +214,7 @@ Then run the following commands:
 Download elastic-package:
 ⚠️ Note: Find latest [download link here](https://github.com/elastic/elastic-package/releases) of elastic-package_*.*.*_linux_amd64.tar.gz 
 ```
-wget https://github.com/elastic/elastic-package/releases/download/v0.83.1/elastic-package_0.83.1_linux_amd64.tar.gz
+wget https://github.com/elastic/elastic-package/releases/download/v0.98.1/elastic-package_0.98.1_linux_amd64.tar.gz
 ```
 
 Create directory for `elastic-package` called `ep` and then extract your download to it:
